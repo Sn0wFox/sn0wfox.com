@@ -44,6 +44,8 @@ html(lang="en")
             li.active
               a(href="#intro") Home
             li
+              a(href="#about") About
+            li
               a(href="#") Resume
             li.dropdown
               a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Portfolio
@@ -66,10 +68,10 @@ html(lang="en")
         .header-content-inner
           h1 Welcome
           p I'm Sn0wFox - a computer science student - and this is my website. Here, you'll find information about me and my work.
-          a.btn.btn-primary.btn-lg(href="#") Discover
+          a.btn.btn-primary.btn-lg#discover(href="#about") Discover
 
-    // Intro Section
-    section.intro
+    // About section
+    section.about#about
       .container
         .row
           .col-lg-8.col-lg-offset-2

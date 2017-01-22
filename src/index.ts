@@ -1,6 +1,7 @@
-// Cache jquery selectors
+// Cache for jquery selectors
 let $nav = $('#siteNav');
 let $body = $('body');
+let $discover = $('#discover');
 
 // Offset for Site Navigation
 $nav.affix({
@@ -10,27 +11,41 @@ $nav.affix({
 });
 
 // Add scrollspy to <body>
-$body.scrollspy({target: ".navbar", offset: 100});
+$body.scrollspy({target: '.navbar', offset: 100});
 
 // Add smooth scrolling on all links inside the navbar
-$nav.find("a").on('click', (event: any) => {
+$nav.find('a').on('click', (event: any) => {
   // Make sure this.hash has a value before overriding default behavior
-  if (event.target.hash && event.target.hash !== "") {
+  if (event.target.hash && event.target.hash !== '') {
     // Prevent default anchor click behavior
     event.preventDefault();
-
-    // Store hash
-    let hash = event.target.hash;
-
-    // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 1000, () => {
-      // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = hash;
-    });
-
-  } // End if
+    runAnimatedScroll(event.target.hash, 1250);
+  }
 
 });
+
+// Add smooth scrolling to the discover button
+$discover.on('click', (event: any) => {
+  // Make sure this.hash has a value before overriding default behavior
+  if (event.target.hash && event.target.hash !== '') {
+    // Prevent default anchor click behavior
+    event.preventDefault();
+    runAnimatedScroll(event.target.hash, 1000);
+  }
+});
+
+/**
+ * Scrolls to the given hash during the given time.
+ * @param hash The id to which scroll
+ * @param time The total amount of time during which scroll
+ */
+function runAnimatedScroll(hash: string, time: number): void {
+  // Using jQuery's animate() method to add smooth page scroll
+  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+  $('html, body').animate({
+    scrollTop: $(hash).offset().top
+  }, 1000, () => {
+    // Add hash (#) to URL when done scrolling (default click behavior)
+    window.location.hash = hash;
+  });
+}
