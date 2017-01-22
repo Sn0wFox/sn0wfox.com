@@ -66,3 +66,14 @@ gulp.task('build', gulp.parallel(
   'build:sass',
   'build:assets',
   'build:ts'));
+
+/**
+ * Watches all .sass .scss .pug .ts files and assets folder,
+ * and recompiles/copies them when they change.
+ */
+gulp.task('watch', () => {
+  gulp.watch(['src/**/*.scss', 'src/**/*.sass'], gulp.series('build:sass'));
+  gulp.watch(['src/**/*.pug'], gulp.series('build:pug'));
+  gulp.watch(['src/**/*.ts'], gulp.series('build:ts'));
+  gulp.watch(['assets/**/*'], gulp.series('build:assets'));
+});
