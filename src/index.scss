@@ -1,3 +1,12 @@
+$primary-color: #2965B7;
+$primary-color-darken: #134090;
+
+$accent-color: #ff9800;
+$accent-color-darken: #e65100;
+
+$primary-txt-color: rgba(245, 245, 245, 0.9);
+$secondary-txt-color: rgba(245, 245, 245, 1);
+
 html,
 body {
   width: 100%;
@@ -6,7 +15,7 @@ body {
 }
 
 a {
-  color: yellowgreen;
+  color: $accent-color;
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
@@ -14,7 +23,7 @@ a {
 
 a:hover,
 a:focus {
-  color: forestgreen;
+  color: $accent-color-darken;
 }
 
 p {
@@ -27,8 +36,11 @@ header {
   width: 100%;
   min-height: auto;
   text-align: center;
-  color: #000;
-  background-image: url('../images/sn0w.jpg');
+  color: $primary-txt-color;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25)
+  ), url('../images/sn0w.jpg');
   background-position: center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -54,7 +66,7 @@ header .header-content .header-content-inner p {
   margin-bottom: 50px;
   font-size: 16px;
   font-weight: 300;
-  color: rgba(255,255,255,.7);
+  color: $secondary-txt-color;
 }
 
 @media(min-width:768px) {
@@ -96,7 +108,7 @@ header .header-content .header-content-inner p {
 
 .intro {
   color: #fff;
-  background-color: yellowgreen;
+  background-color: $primary-color;
   padding: 70px 0;
   text-align: center;
 }
@@ -107,7 +119,7 @@ header .header-content .header-content-inner p {
 
 .content-2 {
   color: #fff;
-  background-color: #222;
+  background-color: $primary-color-darken;
 }
 
 .content-3 {
@@ -169,7 +181,7 @@ header .header-content .header-content-inner p {
 
 .page-footer .contact {
   padding: 100px 0;
-  background-color: yellowgreen;
+  background-color: $accent-color;
   color: #fff;
 }
 
@@ -202,7 +214,7 @@ header .header-content .header-content-inner p {
 }
 
 .navbar-default .navbar-header .navbar-brand {
-  color: yellowgreen;
+  color: $accent-color;
 }
 
 .navbar-default .navbar-header .navbar-brand:hover,
@@ -217,12 +229,12 @@ header .header-content .header-content-inner p {
 
 .navbar-default .nav > li>a:hover,
 .navbar-default .nav>li>a:focus:hover {
-  color: yellowgreen;
+  color: $accent-color;
 }
 
 .navbar-default .nav > li.active>a,
 .navbar-default .nav>li.active>a:focus {
-  color: yellowgreen!important;
+  color: $accent-color!important;
   background-color: transparent;
 }
 
@@ -265,7 +277,7 @@ header .header-content .header-content-inner p {
 
   .navbar-default.affix .navbar-header .navbar-brand {
     letter-spacing: 0;
-    color: yellowgreen;
+    color: $accent-color;
   }
 
   .navbar-default.affix .navbar-header .navbar-brand:hover,
@@ -280,7 +292,7 @@ header .header-content .header-content-inner p {
 
   .navbar-default.affix .nav > li>a:hover,
   .navbar-default.affix .nav>li>a:focus:hover {
-    color: yellowgreen;
+    color: $accent-color;
   }
 }
 
@@ -381,12 +393,12 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  border-color: yellowgreen;
-  background-color: yellowgreen;
+  border-color: $accent-color;
+  background-color: $accent-color;
 }
 
 .btn-primary .badge {
-  color: yellowgreen;
+  color: $accent-color;
   background-color: #fff;
 }
 
@@ -423,11 +435,11 @@ img::-moz-selection {
 }
 
 .text-primary {
-  color: yellowgreen;
+  color: $accent-color;
 }
 
 .bg-primary {
-  background-color: yellowgreen;
+  background-color: $accent-color;
 }
 
 #snfx-logo {

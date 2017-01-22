@@ -1,4 +1,4 @@
-//import * as $ from 'jquery';
+import * as $ from 'jquery';
 
 // Offset for Site Navigation
 $('#siteNav').affix({
