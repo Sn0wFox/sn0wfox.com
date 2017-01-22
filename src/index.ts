@@ -1,15 +1,19 @@
+// Cache jquery selectors
+let $nav = $('#siteNav');
+let $body = $('body');
+
 // Offset for Site Navigation
-$('#siteNav').affix({
+$nav.affix({
   offset: {
     top: 100
   }
 });
 
 // Add scrollspy to <body>
-$('body').scrollspy({target: ".navbar", offset: 100});
+$body.scrollspy({target: ".navbar", offset: 100});
 
 // Add smooth scrolling on all links inside the navbar
-$("#siteNav a").on('click', (event: any) => {
+$nav.find("a").on('click', (event: any) => {
   // Make sure this.hash has a value before overriding default behavior
   if (event.target.hash && event.target.hash !== "") {
     // Prevent default anchor click behavior
