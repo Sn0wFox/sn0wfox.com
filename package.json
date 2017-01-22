@@ -1,0 +1,41 @@
+{
+  "name": "sn0wfox.net",
+  "version": "1.0.0",
+  "description": "A personnal site and portfolio",
+  "main": "dist/index.js",
+  "scripts": {
+    "deploy": "gulp clean && gulp build",
+    "test": "echo No tests specified yet && exit(0)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sn0wFox/sn0wfox.net.git"
+  },
+  "keywords": [
+    "portfolio",
+    "sn0wfox"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sn0wFox/sn0wfox.net/issues"
+  },
+  "homepage": "https://github.com/Sn0wFox/sn0wfox.net#readme",
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.0-beta.18",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "typescript": "^2.1.5",
+    "webpack": "^2.1.0-beta.27",
+    "webpack-merge": "^2.4.0",
+    "webpack-stream": "^3.2.0"
+  },
+  "dependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/jquery": "^2.0.39",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

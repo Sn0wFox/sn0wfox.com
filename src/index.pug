@@ -1,0 +1,155 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Business 2
+
+    // Bootstrap Core css
+    link(href="css/bootstrap.min.css" rel="stylesheet")
+    // Custom css
+    link(href="css/index.css" rel="stylesheet")
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    <!--[if lt IE 9]>
+      script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+      script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+    <![endif]-->
+
+    // Custom fonts from Google
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css')
+
+  body
+
+    // Navigation
+    nav#siteNav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      .container
+        // Logo and responsive toggle
+        .navbar-header
+          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="index.html")
+            span
+              img#snfx-logo(src="images/logo.png" alt="Sn0wFox logo")
+              |  Sn0wFox
+        // Navbar links
+        .collapse.navbar-collapse#navbar
+          ul.nav.navbar-nav.navbar-right
+            li.active
+              a(href="#") Home
+            li
+              a(href="#") Products
+            li.dropdown
+              a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Services
+                span.caret
+              ul.dropdown-menu(aria-labelledby="about-us")
+                li
+                  a(href="#") Engage
+                li
+                  a(href="#") Pontificate
+                li
+                  a(href="#") Synergize
+            li
+              a(href="#") Contact
+
+    // Header
+    header
+      .header-content
+        .header-content-inner
+          h1 Welcome to my world
+          p Objectively innovate empowered manufactured products whereas parallel platforms.
+          a.btn.btn-primary.btn-lg(href="#") Engage Now
+
+    // Intro Section
+    section.intro
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            span.glyphicon.glyphicon-apple(style="font-size: 60px")
+            h2.section-heading Completely synergize resource taxing relationships
+            p.text-light Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.
+
+    // Content 1
+    section.content
+      .container
+        .row
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="images/microphone.jpg" alt="")
+          .col-sm-6
+            h2.section-header Best in Class
+            p.lead.text-muted Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.
+            a.btn.btn-primary.btn-lg(href="#") Classify It
+
+    // Content 2
+    section.content.content-2
+      .container
+        .row
+          .col-sm-6
+            h2.section-header Superior Quality
+            p.lead.text-light Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p>
+            a.btn.btn-default.btn-lg(href="#") Test It
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="images/iphone.jpg" alt="")
+
+    // Promos
+    .container-fluid
+      .row.promo
+        a(href="#")
+          .col-md-4.promo-item.item-1
+            h3 Unleash
+        a(href="#")
+          .col-md-4.promo-item.item-2
+            h3 Synergize
+        a(href="#")
+          .col-md-4.promo-item.item-3
+            h3 Procrastinate
+
+    // Content 3
+    section.content.content-3
+      .container
+        h2.section-header
+          span.glyphicon.glyphicon-pushpin.text-primary
+          <br>
+          | Sanity Check
+        p.lead.text-muted Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.
+        a.btn.btn-primary.btn-lg(href="#") Check Now
+
+    // Footer
+    footer.page-footer
+
+      // Contact Us
+      .contact
+        .container
+          h2.section-heading Contact Us
+          p
+            span.glyphicon.glyphicon-earphone
+            <br/>
+            | +1(23) 456 7890
+          p
+            span.glyphicon.glyphicon-envelope
+            <br/>
+            | info@example.com
+      // Copyright etc
+      .small-print
+        .container
+          p Copyright &copy; Ruben Péricas-Moya 2017
+
+    // Scripts
+
+    script(src="js/jquery-1.11.3.min.js")
+
+    // Bootstrap Core JavaScript
+    script(src="js/bootstrap.min.js")
+
+    // Plugin JavaScript
+    script(src="js/jquery.easing.min.js")
+
+    // Custom Javascript
+    script(src="js/main.bundle.js")
+
