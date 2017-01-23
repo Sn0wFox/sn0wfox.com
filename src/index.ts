@@ -2,16 +2,14 @@
 let $nav = $('#siteNav');
 let $body = $('body');
 let $discover = $('#discover');
+let $explore = $('#explore');
+let $wrapper = $('#wrapper');
 
 // Offset for Site Navigation
 $nav.affix({
   offset: {
     top: 100
   }
-});
-
-$(document).ready(() => {
-  $(".wrapper").load("portfolio/portfolio.html");
 });
 
 // Add scrollspy to <body>
@@ -38,6 +36,10 @@ $discover.on('click', (event: any) => {
   }
 });
 
+$explore.on('click', (event: any) => {
+  loadPortfolio();
+});
+
 /**
  * Scrolls to the given hash during the given time.
  * @param hash The id to which scroll
@@ -52,4 +54,12 @@ function runAnimatedScroll(hash: string, time: number): void {
     // Add hash (#) to URL when done scrolling (default click behavior)
     window.location.hash = hash;
   });
+}
+
+/**
+ * Loads the html code for the portfolio
+ * in the div #wrapper.
+ */
+function loadPortfolio(): void {
+  $wrapper.load("portfolio/portfolio.html");
 }
