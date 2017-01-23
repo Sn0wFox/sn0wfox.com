@@ -6,6 +6,8 @@ $accent-color-darken: #e65100;
 
 $primary-txt-color: rgba(245, 245, 245, 0.9);
 $secondary-txt-color: rgba(245, 245, 245, 1);
+$primary-txt-color-dark: rgba(10, 10, 10, 0.9);
+$secondary-txt-color-dark: rgba(10, 10, 10, 1);
 
 $title-margin: 20px;
 $p-margin: 50px;
@@ -124,7 +126,7 @@ header .header-content .header-content-inner p {
 
 // ABOUT SECTION
 .about {
-  color: #fff;
+  color: $secondary-txt-color;
   background-color: $primary-color;
   padding: 70px 0;
   text-align: center;
@@ -137,7 +139,10 @@ header .header-content .header-content-inner p {
   width: 100%;
   min-height: auto;
   text-align: center;
-  background: url('../images/sn0w3.jpg') no-repeat scroll 0px 100%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.35)
+  ), url('../images/sn0w3.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -151,16 +156,17 @@ header .header-content .header-content-inner p {
   margin-bottom: $title-margin;
   font-size: 50px;
   font-weight: 300;
+  color: $primary-txt-color-dark;
 }
 
 #resume p {
   margin-bottom: $p-margin-small;
+  color: $secondary-txt-color-dark;
 }
 
 #explore {
   margin-bottom: $p-margin-small;
 }
-
 
 @media(min-width:768px) {
   #resume {
@@ -197,7 +203,7 @@ header .header-content .header-content-inner p {
 
 // OTHER SECTIONS
 .content-2 {
-  color: #fff;
+  color: $secondary-txt-color;
   background-color: $primary-color-darken;
 }
 
@@ -212,8 +218,8 @@ header .header-content .header-content-inner p {
 .promo a:visited,
 .promo a:hover,
 .promo a:active {
-  color: white;
-  text-shadow: 0px 0px 40px black;
+  color: $secondary-txt-color;
+  text-shadow: 0px 0px 40px $secondary-txt-color-dark;
   text-decoration: none;
 }
 
@@ -261,7 +267,7 @@ header .header-content .header-content-inner p {
 .page-footer .contact {
   padding: 100px 0;
   background-color: $accent-color;
-  color: #fff;
+  color: $secondary-txt-color;
 }
 
 .page-footer .contact p {
@@ -286,7 +292,7 @@ header .header-content .header-content-inner p {
 
 .navbar-default {
   border-color: rgba(34,34,34,.05);
-  background-color: #fff;
+  background-color: $secondary-txt-color;
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
@@ -298,12 +304,12 @@ header .header-content .header-content-inner p {
 
 .navbar-default .navbar-header .navbar-brand:hover,
 .navbar-default .navbar-header .navbar-brand:focus {
-  color: #eb3812;
+  color: $accent-color-darken;
 }
 
 .navbar-default .nav > li>a,
 .navbar-default .nav>li>a:focus {
-  color: #222;
+  color: $secondary-txt-color-dark;
 }
 
 .navbar-default .nav > li>a:hover,
@@ -335,7 +341,7 @@ header .header-content .header-content-inner p {
 
   .navbar-default .navbar-header .navbar-brand:hover,
   .navbar-default .navbar-header .navbar-brand:focus {
-    color: #fff;
+    color: $secondary-txt-color;
   }
 
   .navbar-default .nav > li>a,
@@ -345,12 +351,12 @@ header .header-content .header-content-inner p {
 
   .navbar-default .nav > li>a:hover,
   .navbar-default .nav>li>a:focus:hover {
-    color: #fff;
+    color: $secondary-txt-color;
   }
 
   .navbar-default.affix {
-    border-color: #fff;
-    background-color: #fff;
+    border-color: $secondary-txt-color;
+    background-color: $secondary-txt-color;
     box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.1);
   }
 
@@ -361,12 +367,12 @@ header .header-content .header-content-inner p {
 
   .navbar-default.affix .navbar-header .navbar-brand:hover,
   .navbar-default.affix .navbar-header .navbar-brand:focus {
-    color: #eb3812;
+    color: $accent-color-darken;
   }
 
   .navbar-default.affix .nav > li>a,
   .navbar-default.affix .nav>li>a:focus {
-    color: #222;
+    color: $secondary-txt-color-dark;
   }
 
   .navbar-default.affix .nav > li>a:hover,
@@ -376,9 +382,9 @@ header .header-content .header-content-inner p {
 }
 
 .btn-default {
-  border-color: #fff;
-  color: #222;
-  background-color: #fff;
+  border-color: $secondary-txt-color;
+  color: $secondary-txt-color-dark;
+  background-color: $secondary-txt-color;
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
   transition: all .35s;
@@ -390,9 +396,9 @@ header .header-content .header-content-inner p {
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  border-color: #eee;
-  color: #222;
-  background-color: #eee;
+  border-color: $primary-txt-color;
+  color: $secondary-txt-color-dark;
+  background-color: $primary-txt-color;
 }
 
 .btn-default:active,
@@ -419,18 +425,18 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  border-color: #fff;
-  background-color: #fff;
+  border-color: $secondary-txt-color;
+  background-color: $secondary-txt-color;
 }
 
 .btn-default .badge {
-  color: #fff;
-  background-color: #222;
+  color: $secondary-txt-color;
+  background-color: $secondary-txt-color-dark;
 }
 
 .btn-primary {
   border-color: $accent-color;
-  color: #fff;
+  color: $secondary-txt-color;
   background-color: $accent-color;
   -webkit-transition: all .35s;
   -moz-transition: all .35s;
@@ -444,7 +450,7 @@ fieldset[disabled] .btn-default.active {
 .btn-primary.active,
 .open > .dropdown-toggle.btn-primary {
   border-color: $accent-color-darken;
-  color: #fff;
+  color: $secondary-txt-color;
   background-color: $accent-color-darken;
 }
 
@@ -478,7 +484,7 @@ fieldset[disabled] .btn-primary.active {
 
 .btn-primary .badge {
   color: $accent-color;
-  background-color: #fff;
+  background-color: $secondary-txt-color;
 }
 
 
@@ -493,23 +499,23 @@ fieldset[disabled] .btn-primary.active {
 
 ::-moz-selection {
   text-shadow: none;
-  color: #fff;
-  background: #222;
+  color: $secondary-txt-color;
+  background: $secondary-txt-color-dark;
 }
 
 ::selection {
   text-shadow: none;
-  color: #fff;
-  background: #222;
+  color: $secondary-txt-color;
+  background: $secondary-txt-color-dark;
 }
 
 img::selection {
-  color: #fff;
+  color: $secondary-txt-color;
   background: 0 0;
 }
 
 img::-moz-selection {
-  color: #fff;
+  color: $secondary-txt-color;
   background: 0 0;
 }
 
