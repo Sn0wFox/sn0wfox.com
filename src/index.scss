@@ -7,6 +7,10 @@ $accent-color-darken: #e65100;
 $primary-txt-color: rgba(245, 245, 245, 0.9);
 $secondary-txt-color: rgba(245, 245, 245, 1);
 
+$title-margin: 20px;
+$p-margin: 50px;
+$p-margin-small: 35px;
+
 
 // GLOBAL BEHAVIOR
 html,
@@ -35,7 +39,7 @@ p {
 
 .section-heading {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: $title-margin;
 }
 
 .content {
@@ -71,13 +75,13 @@ header .header-content {
 
 header .header-content .header-content-inner h1 {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: $title-margin;
   font-size: 50px;
   font-weight: 300;
 }
 
 header .header-content .header-content-inner p {
-  margin-bottom: 50px;
+  margin-bottom: $p-margin;
   font-size: 16px;
   font-weight: 300;
   color: $secondary-txt-color;
@@ -142,6 +146,22 @@ header .header-content .header-content-inner p {
   background-attachment: fixed;
 }
 
+#resume h1 {
+  margin-top: 0;
+  margin-bottom: $title-margin;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+#resume p {
+  margin-bottom: $p-margin-small;
+}
+
+#explore {
+  margin-bottom: $p-margin-small;
+}
+
+
 @media(min-width:768px) {
   #resume {
     min-height: 100%;
@@ -155,6 +175,22 @@ header .header-content .header-content-inner p {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+  }
+
+  #resume h1 {
+    font-size: 70px;
+  }
+
+  #resume p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+    font-size: 18px;
+    margin-bottom: $p-margin;
+  }
+
+  #explore {
+    margin-bottom: $p-margin;
   }
 }
 
