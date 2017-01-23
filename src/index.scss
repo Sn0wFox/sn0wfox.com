@@ -70,6 +70,20 @@ header .header-content .header-content-inner p {
   color: $secondary-txt-color;
 }
 
+#resume {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  background: url('../images/sn0w3.jpg') no-repeat scroll 0px 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 @media(min-width:768px) {
   header {
     min-height: 100%;
@@ -99,6 +113,20 @@ header .header-content .header-content-inner p {
     margin-left: auto;
     max-width: 80%;
     font-size: 18px;
+  }
+
+  #resume {
+    min-height: 100%;
+  }
+
+  #resume .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0 50px;
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    transform: translate(-50%);
   }
 }
 
