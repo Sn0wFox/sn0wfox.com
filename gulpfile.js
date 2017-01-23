@@ -26,7 +26,7 @@ gulp.task('build:ts', () => {
  */
 gulp.task('build:pug', () => {
   return gulp
-    .src('src/*.pug')
+    .src('src/**/*.pug')
     .pipe(gpug())
     .pipe(gulp.dest('dist'));
 });
