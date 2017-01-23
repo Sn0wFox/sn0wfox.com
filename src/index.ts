@@ -10,6 +10,10 @@ $nav.affix({
   }
 });
 
+$(document).ready(() => {
+  $(".wrapper").load("portfolio/portfolio.html");
+});
+
 // Add scrollspy to <body>
 $body.scrollspy({target: '.navbar', offset: 100});
 
