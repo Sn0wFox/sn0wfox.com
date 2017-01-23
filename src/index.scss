@@ -7,6 +7,8 @@ $accent-color-darken: #e65100;
 $primary-txt-color: rgba(245, 245, 245, 0.9);
 $secondary-txt-color: rgba(245, 245, 245, 1);
 
+
+// GLOBAL BEHAVIOR
 html,
 body {
   width: 100%;
@@ -31,6 +33,17 @@ p {
   line-height: 1.5;
 }
 
+.section-heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.content {
+  padding: 100px 0;
+}
+
+
+// HEADER
 header {
   position: relative;
   width: 100%;
@@ -70,20 +83,8 @@ header .header-content .header-content-inner p {
   color: $secondary-txt-color;
 }
 
-#resume {
-  position: relative;
-  width: 100%;
-  min-height: auto;
-  text-align: center;
-  background: url('../images/sn0w3.jpg') no-repeat scroll 0px 100%;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
+// NOTE:  @media is not dynamic, i.e. the default expected behavior
+//        (here for small screens) must be placed BEFORE or will be overwritten.
 @media(min-width:768px) {
   header {
     min-height: 100%;
@@ -114,7 +115,34 @@ header .header-content .header-content-inner p {
     max-width: 80%;
     font-size: 18px;
   }
+}
 
+
+// ABOUT SECTION
+.about {
+  color: #fff;
+  background-color: $primary-color;
+  padding: 70px 0;
+  text-align: center;
+}
+
+
+// RESUME SECTION
+#resume {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  background: url('../images/sn0w3.jpg') no-repeat scroll 0px 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media(min-width:768px) {
   #resume {
     min-height: 100%;
   }
@@ -130,22 +158,8 @@ header .header-content .header-content-inner p {
   }
 }
 
-.section-heading {
-  margin-top: 0;
-  margin-bottom: 20px;
-}
 
-.about {
-  color: #fff;
-  background-color: $primary-color;
-  padding: 70px 0;
-  text-align: center;
-}
-
-.content {
-  padding: 100px 0;
-}
-
+// OTHER SECTIONS
 .content-2 {
   color: #fff;
   background-color: $primary-color-darken;
