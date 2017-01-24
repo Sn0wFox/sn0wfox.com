@@ -101,6 +101,7 @@ blockquote footer {
 // LRC
 #snfx-portfolio-lrc {
   padding: 100px 0 0 0;
+  color: $primary-txt-color-dark;
 }
 
 #imagepreview {
@@ -108,7 +109,6 @@ blockquote footer {
 }
 
 
-// OTHER
 .promo,
 .promo h3,
 .promo a:link,
@@ -139,15 +139,15 @@ blockquote footer {
 }
 
 .item-1 {
-  background: url('../assets/images/sn0w.jpg');
+  background: url('../assets/images/lrc0.jpg');
 }
 
 .item-2 {
-  background: url('../assets/images/sn0w2.jpg');
+  background: url('../assets/images/lrc1.jpg');
 }
 
 .item-3 {
-  background: url('../assets/images/sn0w3.jpg');
+  background: url('../assets/images/lrc2.jpg');
 }
 
 .item-1,
@@ -155,4 +155,10 @@ blockquote footer {
 .item-3 {
   background-size: cover;
   background-position: 50% 50%;
+}
+
+
+// STUDENT WORK
+#snfx-portfolio-student {
+  background-color: $primary-color;
 }
