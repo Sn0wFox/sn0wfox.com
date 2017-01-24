@@ -72,7 +72,7 @@ html(lang="en")
             footer Younger me
           p And so did I...
 
-    // Content 1
+    // Manmanga
     section.content#snfx-portfolio-current
       .container
         .row
@@ -95,13 +95,13 @@ html(lang="en")
               | at the moment. However, I plan to deploy some alpha releases in a not so far future.
               | if you're interested in, stay tuned!
             p.lead.text-muted.text-center ManManga is built using
-              strong  Node.js, Gulp, Angular2, Materialize, Webpack, Jasmine, Karma, Travis CI
+              strong  Node.js, Typescript, Gulp, Angular2, Materialize, Pug, Sass, Webpack, Jasmine, Karma, Travis CI
               |  and some other cool Node packages. In a future release, it will also relies on some&nbsp;
               a(href="https://github.com/Sn0wFox/indexden-client", target="_blank") other projects of mine
               |  to avoid relying on Google.
 
-    // Content 2
-    section.content.content-2#snfx-portfolio-personal
+    // SBT internship
+    section.content.content-2#snfx-portfolio-sbt
       .container
         .row
           .col-sm-6.text-center
@@ -159,6 +159,30 @@ html(lang="en")
                       |  so I can not provide the source code nor a screenshot of the result.
           .col-sm-6
             img.img-responsive.img-circle.center-block(src="../assets/images/internship.jpg" alt="")
+
+    // This website
+    section.content#snfx-portfolio-snfx
+      .container
+        .row
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="../assets/images/this.jpg" alt="")
+          .col-sm-6.text-center
+            h2.section-header This web site
+            p.lead.text-muted.text-justify Because hey, I'm proud of the result !
+              |  I've built this website to show off my skills in more friendly way
+              | than through a resume, and because I wanted to see what I was able to do using Bootstrap.
+              | Indeed, all of this website was built using
+              strong  Bootstrap and jQuery
+              | , as well as
+              strong  Typescript, Pug and Sass
+              |  to provide a modern web development environment. It's deployed on my own server
+              | (well, I rent it) using Node.Js. If you read my other projects, you should have concluded
+              | that I really love Node, which is true.
+            p.lead.text-muted.text-justify I have open-sourced the code too, so if you're interested to see it,
+              |  just click on the following button.
+            a.btn.btn-primary.btn-lg(href="https://github.com/Sn0wFox/sn0wfox.net", target="_blank")
+              span.glyphicon.icon-github(aria-hidden="true")
+              |  GitHub
 
     // Promos
     .container-fluid#snfx-portfolio-student

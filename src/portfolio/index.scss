@@ -67,14 +67,34 @@ blockquote footer {
 }
 
 
-// PERSONAL WORK
-#snfx-portfolio-personal {
+// SBT INTERNSHIP
+#snfx-portfolio-sbt {
   background-color: $primary-color;
   color: $secondary-txt-color;
 }
 
-#snfx-portfolio-personal .panel-collapse{
+#snfx-portfolio-sbt .panel-collapse{
   background-color: transparent;
+}
+
+
+// THIS WEBSITE
+#snfx-portfolio-snfx {
+  background-image: linear-gradient(
+    rgba(10, 10, 10, 0.1),
+    rgba(10, 10, 10, 0.1)
+  ), url('../assets/images/sn0w4.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: $secondary-txt-color;
+}
+
+#snfx-portfolio-snfx p {
+  color: $primary-txt-color;
 }
 
 
