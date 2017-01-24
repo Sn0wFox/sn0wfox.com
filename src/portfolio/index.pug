@@ -104,12 +104,44 @@ html(lang="en")
     section.content.content-2#snfx-portfolio-personal
       .container
         .row
+          .col-sm-6.text-center
+            h2.section-header My last Summer Internship
+            p.lead.text-light.text-justify In summer 2016, I worked as an intern at&nbsp;
+              a(href="http://www.sbt.fr/", target="_blank")
+                strong SBT
+                  sup &reg;
+              |  in France as a
+              strong  Web Developper
+              | . As part of a great team, I had two missions:
+            #accordion.panel-group(role='tablist', aria-multiselectable='true')
+              .panel.panel-default
+                #snfx-small-one.panel-heading(role='tab')
+                  h4.panel-title
+                    a(role='button', data-toggle='collapse', data-parent='#accordion', href='#snfx-collapse-one', aria-expanded='false', aria-controls='snfx-collapse-one')
+                      | The small one
+                #snfx-collapse-one.panel-collapse.collapse(role='tabpanel', aria-labelledby='snfx-small-one')
+                  .panel-body
+                    h3 Banking company website
+                    | First I developed a simple
+                    strong
+                      em  gamified
+                    |  website for a banking company - using Materialize.css and a small MySql database -
+                    | to help costumers to find some resources.
+                    | I then deployed it in production under a Node.js server.
+                    br
+                    | The website is currently tested on 10.000 people.
+                    br
+                    a.btn.btn-default.btn-lg.complementary-text(href="http://natixisinterepargne-silvousplay.symetrix.fr/" target="_blank") View my work
+              .panel.panel-default
+                #snfx-big-one.panel-heading(role='tab')
+                  h4.panel-title
+                    a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#snfx-collapse-two', aria-expanded='false', aria-controls='snfx-collapse-two')
+                      | The big one
+                #snfx-collapse-two.panel-collapse.collapse(role='tabpanel', aria-labelledby='snfx-big-one')
+                  .panel-body
+                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
           .col-sm-6
-            h2.section-header Superior Quality
-            p.lead.text-light Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p)
-            a.btn.btn-default.btn-lg(href="#") Test It
-          .col-sm-6
-            img.img-responsive.img-circle.center-block(src="../assets/images/iphone.jpg" alt="")
+            img.img-responsive.img-circle.center-block(src="../assets/images/internship.jpg" alt="")
 
     // Promos
     .container-fluid#snfx-portfolio-student
