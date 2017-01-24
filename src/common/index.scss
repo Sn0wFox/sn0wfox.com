@@ -369,3 +369,35 @@ header .header-content .header-content-inner p {
     font-size: 18px;
   }
 }
+
+// PANELS
+.panel {
+  background-color: transparent;
+  -webkit-box-shadow: 0;
+  box-shadow: 0;
+  -webkit-border-radius: 300px;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+.panel-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.panel-default > .panel-heading {
+  color: $primary-txt-color-dark;
+  background-color: $secondary-txt-color;
+  border-color: $primary-txt-color;
+  -webkit-border-radius: 300px;
+  -moz-border-radius: 300px;
+  border-radius: 300px;
+}
+
+.panel-default > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: transparent;
+}
+
+.panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
+  border-top: transparent;
+}
