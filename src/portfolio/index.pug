@@ -78,7 +78,7 @@ html(lang="en")
         .row
           .col-sm-6
             img.img-responsive.img-circle.center-block(src="../assets/images/manmanga.jpg" alt="")
-          .col-sm-6
+          .col-sm-6.text-center
             h2.section-header ManManga
             p.lead.text-muted.text-justify ManManga is a dedicated <strong>search engine</strong> for manga and anime.
               |  It uses the power of <strong>semantic web</strong> to retrieve relevant content.
@@ -86,9 +86,19 @@ html(lang="en")
               | by keywords, but also to
               em  infer
               |  and find related content, thanks to similarity matrices and semantic web.
-            a.btn.btn-primary.btn-lg(href="#")
+            a.btn.btn-primary.btn-lg(href="https://github.com/Sn0wFox/manmanga", target="_blank")
               span.glyphicon.icon-github(aria-hidden="true")
               |  GitHub
+          .col-sm-12
+            p.lead.text-muted.text-center.complementary-text As my most recent work,
+              |  ManManga is still in development. This means that it's not deployed anywhere
+              | at the moment. However, I plan to deploy some alpha releases in a not so far future.
+              | if you're interested in, stay tuned!
+            p.lead.text-muted.text-center ManManga is build using
+              strong  Node.js, Gulp, Angular2, Materialize, Jasmine & Karma
+              | . In a future release, it will also relies on some&nbsp;
+              a(href="https://github.com/Sn0wFox/indexden-client", target="_blank") other projects of mine
+              |  to avoid using Google.
 
     // Content 2
     section.content.content-2#snfx-portfolio-personal
