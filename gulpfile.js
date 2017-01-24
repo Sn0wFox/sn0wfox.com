@@ -36,9 +36,9 @@ gulp.task('build:pug', () => {
  */
 gulp.task('build:sass', () => {
   return gulp
-    .src(['src/*.scss', 'src/*.sass'])
+    .src(['src/**/*.scss', 'src/**/*.sass'])
     .pipe(gsass())
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist'));
 });
 
 /**

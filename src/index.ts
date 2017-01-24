@@ -63,6 +63,7 @@ function runAnimatedScroll(hash: string, time: number): void {
 /**
  * Loads the html code for the portfolio
  * in the div #wrapper.
+ * @deprecated
  */
 function loadPortfolio(): void {
   $wrapper.load("portfolio/portfolio.html", (resp: string, status: string) => {

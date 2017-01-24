@@ -1,0 +1,131 @@
+doctype html
+html(lang="en")
+
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
+    // Right favicon for the right device. Hell yeah: https://realfavicongenerator.net
+    meta(name="msapplication-config" content="images/browserconfig.xml")
+    meta(name="theme-color" content="#ffffff")
+    link(rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png")
+    link(rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32")
+    link(rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16")
+    link(rel="manifest" href="../images/manifest.json")
+    link(rel="mask-icon" href="../images/safari-pinned-tab.svg" color="#5bbad5")
+    link(rel="shortcut icon" href="../images/favicon.ico")
+
+    title Sn0wFox.net
+
+    // Bootstrap Core css
+    link(href="../css/bootstrap.min.css" rel="stylesheet")
+    // Custom css
+    link(href="index.css" rel="stylesheet")
+
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    <!--[if lt IE 9])
+    script(src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+    script(src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+    <![endif]--)
+
+    // Custom fonts from Google
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css')
+
+  body
+
+    // Navigation
+    nav#siteNav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+      .container
+        // Logo and responsive toggle
+        .navbar-header
+          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar")
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href="../index.html")
+            span
+              img#snfx-logo(src="../images/logo.png" alt="Sn0wFox logo")
+              |  Sn0wFox
+        // Navbar links
+        .collapse.navbar-collapse#navbar
+          ul.nav.navbar-nav.navbar-right
+            li.active
+              a(href="#snfx-portfolio-header") Intro
+            li
+              a(href="#snfx-portfolio-current") Current
+            li
+              a(href="#snfx-portfolio-personal") Personal
+            li
+              a(href="#snfx-portfolio-student") Student
+            li
+              a(href="#snfx-portfolio-began") Where it began
+
+    // Header
+    header#snfx-portfolio-header
+      .header-content
+        .header-content-inner
+          blockquote
+            h2 All that coding stuff looks awesome !<br/>I should learn that.
+            footer Younger me
+          p And so did I...
+
+    // Content 1
+    section.content#snfx-portfolio-current
+      .container
+        .row
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="../images/microphone.jpg" alt="")
+          .col-sm-6
+            h2.section-header Best in Class
+            p.lead.text-muted Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.
+            a.btn.btn-primary.btn-lg(href="#") Classify It
+
+    // Content 2
+    section.content.content-2#snfx-portfolio-personal
+      .container
+        .row
+          .col-sm-6
+            h2.section-header Superior Quality
+            p.lead.text-light Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.</p)
+            a.btn.btn-default.btn-lg(href="#") Test It
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="../images/iphone.jpg" alt="")
+
+    // Promos
+    .container-fluid#snfx-portfolio-student
+      .row.promo
+        a(href="#")
+          .col-md-4.promo-item.item-1
+            h3 Unleash
+        a(href="#")
+          .col-md-4.promo-item.item-2
+            h3 Synergize
+        a(href="#")
+          .col-md-4.promo-item.item-3
+            h3 Procrastinate
+
+    // Content 3
+    section.content.content-3#snfx-portfolio-began
+      .container
+        h2.section-header
+          span.glyphicon.glyphicon-pushpin.text-primary
+          br
+          | Sanity Check
+        p.lead.text-muted Holisticly predominate extensible testing procedures for reliable supply chains. Dynamically innovate resource-leveling customer service for state of the art customer service.
+        a.btn.btn-primary.btn-lg(href="#") Check Now
+
+    // Scripts
+    // Jquery
+    script(src="../js/jquery-1.11.3.min.js")
+
+    // Bootstrap Core JavaScript
+    script(src="../js/bootstrap.min.js")
+
+    // Plugin JavaScript
+    script(src="../js/jquery.easing.min.js")
+
+    // Custom Javascript
+    script(src="main.bundle.js")

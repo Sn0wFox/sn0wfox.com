@@ -1,0 +1,81 @@
+@import '../index';
+
+blockquote {
+  padding: 6px 16px;
+  border: none;
+  quotes: "\201C" "\201D";
+  display: inline-block;
+  position: relative;
+}
+
+blockquote:before {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  content: open-quote;
+  font-weight: bold;
+  position: absolute;
+  font-size: 80px;
+  top: -25px;
+  left: -25px;
+}
+
+blockquote:after {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  content: close-quote;
+  font-weight: bold;
+  position: absolute;
+  font-size: 80px;
+  bottom: -50px;
+  right: -25px;
+}
+
+blockquote footer {
+  color: $secondary-txt-color;
+}
+
+.promo,
+.promo h3,
+.promo a:link,
+.promo a:visited,
+.promo a:hover,
+.promo a:active {
+  color: $secondary-txt-color;
+  text-shadow: 0px 0px 40px $secondary-txt-color-dark;
+  text-decoration: none;
+}
+
+.promo-item {
+  height: 200px;
+  line-height: 180px;
+  text-align: center;
+}
+
+.promo-item:hover {
+  background-size: 110%;
+  border: 10px solid rgba(255,255,255,0.3);
+  line-height: 160px;
+}
+
+.promo-item h3 {
+  font-size: 40px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.item-1 {
+  background: url('../images/writing.jpg');
+}
+
+.item-2 {
+  background: url('../images/concert.jpg');
+}
+
+.item-3 {
+  background: url('../images/pencil_sharpener.jpg');
+}
+
+.item-1,
+.item-2,
+.item-3 {
+  background-size: cover;
+  background-position: 50% 50%;
+}

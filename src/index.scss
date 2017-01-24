@@ -13,7 +13,6 @@ $title-margin: 20px;
 $p-margin: 50px;
 $p-margin-small: 35px;
 
-
 // GLOBAL BEHAVIOR
 html,
 body {
@@ -52,248 +51,13 @@ p {
   height: 100%;
 }
 
-
-// HEADER
-header {
-  position: relative;
-  width: 100%;
-  min-height: auto;
-  text-align: center;
-  color: $primary-txt-color;
-  background-image: linear-gradient(
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.25)
-  ), url('../images/sn0w.jpg');
-  background-position: center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-}
-
-header .header-content {
-  position: relative;
-  width: 100%;
-  padding: 100px 15px 70px;
-  text-align: center;
-}
-
-header .header-content .header-content-inner h1 {
-  margin-top: 0;
-  margin-bottom: $title-margin;
-  font-size: 50px;
-  font-weight: 300;
-}
-
-header .header-content .header-content-inner p {
-  margin-bottom: $p-margin;
-  font-size: 16px;
-  font-weight: 300;
-  color: $secondary-txt-color;
-}
-
-// NOTE:  @media is not dynamic, i.e. the default expected behavior
-//        (here for small screens) must be placed BEFORE or will be overwritten.
-@media(min-width:768px) {
-  header {
-    min-height: 100%;
-  }
-
-  header .header-content {
-    position: absolute;
-    top: 50%;
-    padding: 0 50px;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-  header .header-content .header-content-inner {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1000px;
-  }
-
-  header .header-content .header-content-inner h1 {
-    font-size: 100px;
-  }
-
-  header .header-content .header-content-inner p {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 80%;
-    font-size: 18px;
-  }
+#snfx-logo {
+  max-width:100%;
+  max-height:100%;
 }
 
 
-// ABOUT SECTION
-.about {
-  color: $secondary-txt-color;
-  background-color: $primary-color;
-  padding: 70px 0;
-  text-align: center;
-}
-
-
-// RESUME SECTION
-#resume {
-  position: relative;
-  width: 100%;
-  min-height: auto;
-  text-align: center;
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.35),
-    rgba(255, 255, 255, 0.35)
-  ), url('../images/sn0w3.jpg');
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-}
-
-#resume h1 {
-  margin-top: 0;
-  margin-bottom: $title-margin;
-  font-size: 50px;
-  font-weight: 300;
-  color: $primary-txt-color-dark;
-}
-
-#resume p {
-  margin-bottom: $p-margin-small;
-  color: $secondary-txt-color-dark;
-}
-
-#explore {
-  margin-bottom: $p-margin-small;
-}
-
-@media(min-width:768px) {
-  #resume {
-    min-height: 100%;
-  }
-
-  #resume .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    padding: 0 50px;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-  }
-
-  #resume h1 {
-    font-size: 70px;
-  }
-
-  #resume p {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 80%;
-    font-size: 18px;
-    margin-bottom: $p-margin;
-  }
-
-  #explore {
-    margin-bottom: $p-margin;
-  }
-}
-
-
-// OTHER SECTIONS
-.content-2 {
-  color: $secondary-txt-color;
-  background-color: $primary-color-darken;
-}
-
-.content-3 {
-  padding: 20px 0 40px;
-  text-align: center;
-}
-
-.promo,
-.promo h3,
-.promo a:link,
-.promo a:visited,
-.promo a:hover,
-.promo a:active {
-  color: $secondary-txt-color;
-  text-shadow: 0px 0px 40px $secondary-txt-color-dark;
-  text-decoration: none;
-}
-
-.promo-item {
-  height: 200px;
-  line-height: 180px;
-  text-align: center;
-}
-
-.promo-item:hover {
-  background-size: 110%;
-  border: 10px solid rgba(255,255,255,0.3);
-  line-height: 160px;
-}
-
-.promo-item h3 {
-  font-size: 40px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.item-1 {
-  background: url('../images/writing.jpg');
-}
-
-.item-2 {
-  background: url('../images/concert.jpg');
-}
-
-.item-3 {
-  background: url('../images/pencil_sharpener.jpg');
-}
-
-.item-1,
-.item-2,
-.item-3 {
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-.page-footer {
-  text-align: center;
-}
-
-.page-footer .contact {
-  padding: 100px 0;
-  background-color: $accent-color;
-  color: $secondary-txt-color;
-}
-
-.page-footer .contact p {
-  font-size: 22px;
-  font-weight: 300;
-}
-
-.content-3 .glyphicon,
-.page-footer .contact .glyphicon {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.page-footer .small-print {
-  padding: 50px 0 40px;
-  font-weight: 300;
-}
-
-.text-light {
-  color: rgba(255,255,255,.7);
-}
-
+// NAVBAR
 .navbar-default {
   border-color: rgba(34,34,34,.05);
   background-color: $secondary-txt-color;
@@ -385,153 +149,77 @@ header .header-content .header-content-inner p {
   }
 }
 
-.btn-default {
-  border-color: $secondary-txt-color;
-  color: $secondary-txt-color-dark;
-  background-color: $secondary-txt-color;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s;
+
+// HEADER
+header {
+  position: relative;
+  width: 100%;
+  min-height: auto;
+  text-align: center;
+  color: $primary-txt-color;
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25)
+  ), url('../images/sn0w.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
-.btn-default:hover,
-.btn-default:focus,
-.btn-default.focus,
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  border-color: $primary-txt-color;
-  color: $secondary-txt-color-dark;
-  background-color: $primary-txt-color;
+header .header-content {
+  position: relative;
+  width: 100%;
+  padding: 100px 15px 70px;
+  text-align: center;
 }
 
-.btn-default:active,
-.btn-default.active,
-.open > .dropdown-toggle.btn-default {
-  background-image: none;
+header .header-content .header-content-inner h1 {
+  margin-top: 0;
+  margin-bottom: $title-margin;
+  font-size: 50px;
+  font-weight: 300;
 }
 
-.btn-default.disabled,
-.btn-default[disabled],
-fieldset[disabled] .btn-default,
-.btn-default.disabled:hover,
-.btn-default[disabled]:hover,
-fieldset[disabled] .btn-default:hover,
-.btn-default.disabled:focus,
-.btn-default[disabled]:focus,
-fieldset[disabled] .btn-default:focus,
-.btn-default.disabled.focus,
-.btn-default[disabled].focus,
-fieldset[disabled] .btn-default.focus,
-.btn-default.disabled:active,
-.btn-default[disabled]:active,
-fieldset[disabled] .btn-default:active,
-.btn-default.disabled.active,
-.btn-default[disabled].active,
-fieldset[disabled] .btn-default.active {
-  border-color: $secondary-txt-color;
-  background-color: $secondary-txt-color;
-}
-
-.btn-default .badge {
+header .header-content .header-content-inner p {
+  margin-bottom: $p-margin;
+  font-size: 16px;
+  font-weight: 300;
   color: $secondary-txt-color;
-  background-color: $secondary-txt-color-dark;
 }
 
-.btn-primary {
-  border-color: $accent-color;
-  color: $secondary-txt-color;
-  background-color: $accent-color;
-  -webkit-transition: all .35s;
-  -moz-transition: all .35s;
-  transition: all .35s;
-}
+// NOTE:  @media is not dynamic, i.e. the default expected behavior
+//        (here for small screens) must be placed BEFORE or will be overwritten.
+@media(min-width:768px) {
+  header {
+    min-height: 100%;
+  }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary.focus,
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  border-color: $accent-color-darken;
-  color: $secondary-txt-color;
-  background-color: $accent-color-darken;
-}
+  header .header-content {
+    position: absolute;
+    top: 50%;
+    padding: 0 50px;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
 
-.btn-primary:active,
-.btn-primary.active,
-.open > .dropdown-toggle.btn-primary {
-  background-image: none;
-}
+  header .header-content .header-content-inner {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1000px;
+  }
 
-.btn-primary.disabled,
-.btn-primary[disabled],
-fieldset[disabled] .btn-primary,
-.btn-primary.disabled:hover,
-.btn-primary[disabled]:hover,
-fieldset[disabled] .btn-primary:hover,
-.btn-primary.disabled:focus,
-.btn-primary[disabled]:focus,
-fieldset[disabled] .btn-primary:focus,
-.btn-primary.disabled.focus,
-.btn-primary[disabled].focus,
-fieldset[disabled] .btn-primary.focus,
-.btn-primary.disabled:active,
-.btn-primary[disabled]:active,
-fieldset[disabled] .btn-primary:active,
-.btn-primary.disabled.active,
-.btn-primary[disabled].active,
-fieldset[disabled] .btn-primary.active {
-  border-color: $accent-color-darken;
-  background-color: $accent-color-darken;
-}
+  header .header-content .header-content-inner h1 {
+    font-size: 100px;
+  }
 
-.btn-primary .badge {
-  color: $accent-color;
-  background-color: $secondary-txt-color;
-}
-
-
-.btn {
-  border-radius: 300px;
-  text-transform: uppercase;
-}
-
-.btn-lg {
-  padding: 15px 30px;
-}
-
-::-moz-selection {
-  text-shadow: none;
-  color: $secondary-txt-color;
-  background: $secondary-txt-color-dark;
-}
-
-::selection {
-  text-shadow: none;
-  color: $secondary-txt-color;
-  background: $secondary-txt-color-dark;
-}
-
-img::selection {
-  color: $secondary-txt-color;
-  background: 0 0;
-}
-
-img::-moz-selection {
-  color: $secondary-txt-color;
-  background: 0 0;
-}
-
-.text-primary {
-  color: $accent-color;
-}
-
-.bg-primary {
-  background-color: $accent-color;
-}
-
-#snfx-logo {
-  max-width:100%;
-  max-height:100%;
+  header .header-content .header-content-inner p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+    font-size: 18px;
+  }
 }

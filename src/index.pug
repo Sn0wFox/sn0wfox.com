@@ -21,7 +21,7 @@ html(lang="en")
     // Bootstrap Core css
     link(href="css/bootstrap.min.css" rel="stylesheet")
     // Custom css
-    link(href="css/index.css" rel="stylesheet")
+    link(href="home/index.css" rel="stylesheet")
 
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
@@ -60,18 +60,8 @@ html(lang="en")
               a(href="#resume") Resume
             li
               a(href="#snfx-contact") Contact
-            li.dropdown
-              a.dropdown-toggle(href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false") Portfolio
-                span.caret
-              ul.dropdown-menu(aria-labelledby="about-us")
-                li
-                  a(href="#") Current work
-                li
-                  a(href="#") Personal work
-                li
-                  a(href="#") Student work
-                li
-                  a(href="#") Where it began
+            li
+              a(href="portfolio") Portfolio
 
     .wrapper#wrapper
 
@@ -115,7 +105,7 @@ html(lang="en")
             .col-lg-8.col-lg-offset-2
               h1.section-heading Know me better
               p I believe that browsing my portfolio will teach you a lot about me.
-              button.btn.btn-primary.btn-lg#explore Explore
+              a.btn.btn-primary.btn-lg#explore(href="portfolio/index.html") Explore
               p If you want to view my works and skills in a quicker way, you can download my resume.
                 |  However, a lot of my work won't appear in it - and it's written in a more formal style.
                 | It's as you want !
