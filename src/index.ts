@@ -4,40 +4,44 @@ let $body = $('body');
 let $discover = $('#discover');
 let $explore = $('#explore');
 let $wrapper = $('#wrapper');
+let $document = $(document);
 
-// Offset for Site Navigation
-$nav.affix({
-  offset: {
-    top: 100
-  }
-});
+// On document ready
+$document.ready(() => {
+  // Offset for Site Navigation
+  $nav.affix({
+    offset: {
+      top: 100
+    }
+  });
 
-// Add scrollspy to <body>
-$body.scrollspy({target: '.navbar', offset: 100});
+  // Add scrollspy to <body>
+  $body.scrollspy({target: '.navbar', offset: 100});
 
-// Add smooth scrolling on all links inside the navbar
-$nav.find('a').on('click', (event: any) => {
-  // Make sure this.hash has a value before overriding default behavior
-  if (event.target.hash && event.target.hash !== '') {
-    // Prevent default anchor click behavior
-    event.preventDefault();
-    runAnimatedScroll(event.target.hash, 1250);
-  }
+  // Add smooth scrolling on all links inside the navbar
+  $nav.find('a').on('click', (event: any) => {
+    // Make sure this.hash has a value before overriding default behavior
+    if (event.target.hash && event.target.hash !== '') {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      runAnimatedScroll(event.target.hash, 1250);
+    }
 
-});
+  });
 
-// Add smooth scrolling to the discover button
-$discover.on('click', (event: any) => {
-  // Make sure this.hash has a value before overriding default behavior
-  if (event.target.hash && event.target.hash !== '') {
-    // Prevent default anchor click behavior
-    event.preventDefault();
-    runAnimatedScroll(event.target.hash, 1000);
-  }
-});
+  // Add smooth scrolling to the discover button
+  $discover.on('click', (event: any) => {
+    // Make sure this.hash has a value before overriding default behavior
+    if (event.target.hash && event.target.hash !== '') {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      runAnimatedScroll(event.target.hash, 1000);
+    }
+  });
 
-$explore.on('click', (event: any) => {
-  loadPortfolio();
+  $explore.on('click', (event: any) => {
+    loadPortfolio();
+  });
 });
 
 /**
@@ -61,5 +65,7 @@ function runAnimatedScroll(hash: string, time: number): void {
  * in the div #wrapper.
  */
 function loadPortfolio(): void {
-  $wrapper.load("portfolio/portfolio.html");
+  $wrapper.load("portfolio/portfolio.html", (resp: string, status: string) => {
+    console.log("LOADED: " + status);
+  });
 }
