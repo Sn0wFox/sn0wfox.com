@@ -118,28 +118,45 @@ html(lang="en")
                 #snfx-small-one.panel-heading(role='tab')
                   h4.panel-title
                     a(role='button', data-toggle='collapse', data-parent='#accordion', href='#snfx-collapse-one', aria-expanded='false', aria-controls='snfx-collapse-one')
-                      | The small one
+                      | The side one
                 #snfx-collapse-one.panel-collapse.collapse(role='tabpanel', aria-labelledby='snfx-small-one')
                   .panel-body
                     h3 Banking company website
-                    | First I developed a simple
-                    strong
-                      em  gamified
-                    |  website for a banking company - using Materialize.css and a small MySql database -
-                    | to help costumers to find some resources.
-                    | I then deployed it in production under a Node.js server.
-                    br
-                    | The website is currently tested on 10.000 people.
-                    br
+                    p.text-justify First I developed a simple
+                      strong
+                        em  gamified
+                      |  website for a banking company - using Materialize.css and a small MySql database -
+                      | to help costumers to find some resources.
+                      | I then deployed it in production under a Node.js server.
+                      br
+                      | The website is currently tested on 10.000 people.
+                      br
                     a.btn.btn-primary.btn-lg.complementary-text(href="http://natixisinterepargne-silvousplay.symetrix.fr/" target="_blank") View my work
               .panel.panel-default
                 #snfx-big-one.panel-heading(role='tab')
                   h4.panel-title
                     a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#snfx-collapse-two', aria-expanded='false', aria-controls='snfx-collapse-two')
-                      | The big one
+                      | The main one
                 #snfx-collapse-two.panel-collapse.collapse(role='tabpanel', aria-labelledby='snfx-big-one')
                   .panel-body
-                    | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                    h3 Management platform
+                    p.text-justify My biggest task was to develop the&nbsp;
+                      abbr.initialism(title="Proof of Concept") POC
+                      |  of an
+                      strong  extremely modular
+                      |  web platform, dedicated to team management.
+                      | I had to integrate several
+                      strong  third party web services (using REST APIs)
+                      |  such as LinkedIn, Moodle, YouTube and an Elastic Search server.
+                      | I used Angular2 (beta) framework for the front-side
+                      | as well as a MySQL server and a Node.JS server as backend,
+                      | and deployed it.
+                    p.text-justify I also had the occasion to
+                      strong  configure and deploy a CAS server
+                      |  by myself - although supported by the network administrator -
+                      | which is something i'm really proud about.
+                    p.text-justify Unfortunately, this is a private work of the company I worked for,
+                      |  so I can not provide the source code nor a screenshot of the result.
           .col-sm-6
             img.img-responsive.img-circle.center-block(src="../assets/images/internship.jpg" alt="")
 
