@@ -16,9 +16,9 @@ const wpconf = require('./webpack.config.js');
  */
 gulp.task('build:ts', () => {
   return gulp
-    .src('src/index.ts')
+    .src(['src/**/*.ts'])
     .pipe(gwebpack(wpconf, webpack))
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist'));
 });
 
 /**
@@ -47,8 +47,8 @@ gulp.task('build:sass', () => {
  */
 gulp.task('build:assets', () => {
   return gulp
-    .src('assets/**/*')
-    .pipe(gulp.dest('dist'));
+    .src('src/assets/**/*')
+    .pipe(gulp.dest('dist/assets'));
 });
 
 /**
@@ -75,5 +75,5 @@ gulp.task('watch', () => {
   gulp.watch(['src/**/*.scss', 'src/**/*.sass'], gulp.series('build:sass'));
   gulp.watch(['src/**/*.pug'], gulp.series('build:pug'));
   gulp.watch(['src/**/*.ts'], gulp.series('build:ts'));
-  gulp.watch(['assets/**/*'], gulp.series('build:assets'));
+  gulp.watch(['src/assets/**/*'], gulp.series('build:assets'));
 });

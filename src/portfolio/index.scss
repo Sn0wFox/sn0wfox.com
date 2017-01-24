@@ -1,4 +1,13 @@
-@import '../index';
+@import '../common/index';
+
+
+// HEADER
+header {
+  background-image: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25)
+  ), url('../assets/images/sn0w.jpg');
+}
 
 blockquote {
   padding: 6px 16px;
@@ -32,6 +41,8 @@ blockquote footer {
   color: $secondary-txt-color;
 }
 
+
+// OTHER
 .promo,
 .promo h3,
 .promo a:link,
@@ -62,15 +73,15 @@ blockquote footer {
 }
 
 .item-1 {
-  background: url('../images/writing.jpg');
+  background: url('../assets/images/writing.jpg');
 }
 
 .item-2 {
-  background: url('../images/concert.jpg');
+  background: url('../assets/images/concert.jpg');
 }
 
 .item-3 {
-  background: url('../images/pencil_sharpener.jpg');
+  background: url('../assets/images/pencil_sharpener.jpg');
 }
 
 .item-1,

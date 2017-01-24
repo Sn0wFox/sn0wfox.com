@@ -5,7 +5,8 @@ var webpackMerge = require('webpack-merge');
 // Webpack Config
 var webpackConfig = {
   entry: {
-    'main':'./src/index'
+    'home/main': './src/home/index.ts',
+    'portfolio/main': './src/portfolio/index.ts'
   },
 
   output: {
