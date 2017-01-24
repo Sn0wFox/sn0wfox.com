@@ -48,6 +48,24 @@ blockquote footer {
 }
 
 
+// MANMANGA
+#snfx-portfolio-current {
+  background-image: linear-gradient(
+    rgba(245, 245, 245, 0.7),
+    rgba(245, 245, 245, 0.7)
+  ), url('../assets/images/sn0w2.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+}
+
+#snfx-portfolio-current p {
+  color: $primary-txt-color-dark;
+}
+
+
 // PERSONAL WORK
 #snfx-portfolio-personal {
   background-color: $primary-color;
