@@ -401,3 +401,38 @@ header .header-content .header-content-inner p {
 .panel-group .panel-heading + .panel-collapse > .list-group, .panel-group .panel-heading + .panel-collapse > .panel-body {
   border-top: transparent;
 }
+
+
+// FOOTER
+.page-footer {
+  text-align: center;
+}
+
+.page-footer .contact {
+  padding: 100px 0;
+  background-color: $accent-color;
+  color: $secondary-txt-color;
+}
+
+.page-footer .contact p {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.content-3 .glyphicon,
+.page-footer .contact .glyphicon {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.page-footer .small-print {
+  padding: 50px 0 40px;
+  font-weight: 300;
+}
+
+footer a {
+  color: $primary-txt-color;
+}
+footer a:hover {
+  color: $secondary-txt-color;
+}
