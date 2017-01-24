@@ -108,7 +108,6 @@ blockquote footer {
   width: 100%;
 }
 
-
 .promo,
 .promo h3,
 .promo a:link,
@@ -161,4 +160,9 @@ blockquote footer {
 // STUDENT WORK
 #snfx-portfolio-student {
   background-color: $primary-color;
+  color: $primary-txt-color;
+}
+
+#snfx-portfolio-student p {
+  color: $primary-txt-color;
 }
