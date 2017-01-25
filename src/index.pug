@@ -36,11 +36,11 @@ html(lang="en")
   body
 
     // Navigation
-    nav#siteNav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+    nav#snfx-site-nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
       .container
         // Logo and responsive toggle
         .navbar-header
-          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar")
+          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#snfx-navbar")
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
@@ -51,29 +51,29 @@ html(lang="en")
               img#snfx-logo-orange(src="assets/images/logo-orange.png" alt="Sn0wFox logo - orange")
               |  Sn0wFox
         // Navbar links
-        .collapse.navbar-collapse#navbar
+        .collapse.navbar-collapse#snfx-navbar
           ul.nav.navbar-nav.navbar-right
             li.active
-              a(href="#intro") Home
+              a(href="#snfx-intro") Home
             li
-              a(href="#about") About
+              a(href="#snfx-about") About
             li
-              a(href="#resume") Resume
+              a(href="#snfx-resume") Resume
             li
               a(href="#snfx-contact") Contact
             li
               a(href="portfolio") Portfolio
 
     // Header
-    header#intro
+    header#snfx-intro
       .header-content
         .header-content-inner
           h1 Welcome
           p I'm Sn0wFox - a computer science student & developer - and this is my website. Here, you'll find information about me and my work.
-          a.btn.btn-primary.btn-lg#discover(href="#about") Discover
+          a.btn.btn-primary.btn-lg#snfx-discover(href="#snfx-about") Discover
 
     // About section
-    section.about#about
+    section#snfx-about
       .container
         .row
           .col-sm-6
@@ -110,17 +110,17 @@ html(lang="en")
               | You'll find more about my work and my skills in my portfolio and in my resume.
 
     // Resume section
-    section.content.resume#resume
+    section.content.resume#snfx-resume
       .container
         .row
           .col-lg-8.col-lg-offset-2
             h1.section-heading Know me better
             p I believe that browsing my portfolio will teach you a lot about me.
-            a.btn.btn-primary.btn-lg#explore(href="portfolio") Explore
+            a.btn.btn-primary.btn-lg#snfx-explore(href="portfolio") Explore
             p If you want to view my works and skills in a quicker way, you can download my resume.
               |  However, a lot of my work won't appear in it - and it's written in a more formal style.
               | It's as you want !
-            a.btn.btn-primary.btn-lg#view-resume(href="assets/resume_Ruben_PERICAS-MOYA.pdf", target="_blank") View my resume
+            a.btn.btn-primary.btn-lg#snfx-view-resume(href="assets/resume_Ruben_PERICAS-MOYA.pdf", target="_blank") View my resume
 
     // Footer
     footer.page-footer

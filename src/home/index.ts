@@ -3,12 +3,12 @@ import { initNavBar,
 
 // Cache for jquery selectors
 let $document = $(document);
-let $discover = $('#discover');
+let $discover = $('#snfx-discover');
 
 // On document ready
 $document.ready(() => {
   // Init navbar
-  initNavBar('#siteNav', 1250);
+  initNavBar('#snfx-site-nav', 1250);
 
   // Init discover button
   $discover.on('click', (event: any) => {

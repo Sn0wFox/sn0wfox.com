@@ -11,7 +11,7 @@ header {
 
 
 // ABOUT SECTION
-.about {
+#snfx-about {
   color: $secondary-txt-color;
   background-color: $primary-color;
   padding: 70px 0;
@@ -20,7 +20,7 @@ header {
 
 
 // RESUME SECTION
-#resume {
+#snfx-resume {
   position: relative;
   width: 100%;
   min-height: auto;
@@ -37,7 +37,7 @@ header {
   background-attachment: fixed;
 }
 
-#resume h1 {
+#snfx-resume h1 {
   margin-top: 0;
   margin-bottom: $title-margin;
   font-size: 50px;
@@ -45,21 +45,21 @@ header {
   color: $primary-txt-color-dark;
 }
 
-#resume p {
+#snfx-resume p {
   margin-bottom: $p-margin-small;
   color: $secondary-txt-color-dark;
 }
 
-#explore {
+#snfx-explore {
   margin-bottom: $p-margin-small;
 }
 
 @media(min-width: $min-size) {
-  #resume {
+  #snfx-resume {
     min-height: 100%;
   }
 
-  #resume .container {
+  #snfx-resume .container {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -69,11 +69,11 @@ header {
     transform: translate(-50%, -50%);
   }
 
-  #resume h1 {
+  #snfx-resume h1 {
     font-size: 70px;
   }
 
-  #resume p {
+  #snfx-resume p {
     margin-right: auto;
     margin-left: auto;
     max-width: 80%;
@@ -81,7 +81,7 @@ header {
     margin-bottom: $p-margin;
   }
 
-  #explore {
+  #snfx-explore {
     margin-bottom: $p-margin;
   }
 }

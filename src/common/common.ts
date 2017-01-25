@@ -32,12 +32,6 @@ export function initNavBar(navHash: string, scrollTime: number = 1000, navOffset
       runAnimatedScroll(event.target.hash, scrollTime);
     }
   });
-
-  $nav.on('activate.bs', () => {
-    console.log("SCROLL SPIED");
-  });
-
-  console.log($('nav * img'));
 }
 
 
