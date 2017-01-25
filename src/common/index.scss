@@ -52,11 +52,6 @@ p {
   margin-top: $p-margin-small;
 }
 
-#snfx-logo {
-  max-width:100%;
-  max-height:100%;
-}
-
 
 // CUSTOM ICONS
 @font-face {
@@ -253,6 +248,20 @@ fieldset[disabled] .btn-primary.active {
   background-color: transparent;
 }
 
+#snfx-logo, #snfx-logo-orange {
+  max-width:100%;
+  max-height:100%;
+}
+
+#snfx-logo {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+#snfx-logo-orange {
+  opacity: 1;
+}
+
 @media(min-width: $min-size) {
   .navbar-default {
     border-color: rgba(255,255,255,.3);
@@ -304,6 +313,28 @@ fieldset[disabled] .btn-primary.active {
   .navbar-default.affix .nav>li>a:focus:hover {
     color: $accent-color;
   }
+
+  .affix * #snfx-logo-orange {
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .affix * #snfx-logo {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  #snfx-logo {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  #snfx-logo-orange {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+
 }
 
 
