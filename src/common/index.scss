@@ -12,6 +12,7 @@ $secondary-txt-color-dark: rgba(10, 10, 10, 1);
 $title-margin: 20px;
 $p-margin: 50px;
 $p-margin-small: 35px;
+$min-size: 768px;
 
 // GLOBAL BEHAVIOR
 html,
@@ -252,7 +253,7 @@ fieldset[disabled] .btn-primary.active {
   background-color: transparent;
 }
 
-@media(min-width:768px) {
+@media(min-width: $min-size) {
   .navbar-default {
     border-color: rgba(255,255,255,.3);
     background-color: transparent;
@@ -344,7 +345,7 @@ header .header-content .header-content-inner p {
 
 // NOTE:  @media is not dynamic, i.e. the default expected behavior
 //        (here for small screens) must be placed BEFORE or will be overwritten.
-@media(min-width:768px) {
+@media(min-width: $min-size) {
   header {
     min-height: 100%;
   }

@@ -54,7 +54,7 @@ header {
   margin-bottom: $p-margin-small;
 }
 
-@media(min-width:768px) {
+@media(min-width: $min-size) {
   #resume {
     min-height: 100%;
   }
