@@ -160,3 +160,29 @@ blockquote footer {
 #snfx-portfolio-student p {
   color: $primary-txt-color;
 }
+
+
+// OTHER
+#snfx-portfolio-other {
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ), url('../assets/images/sn0w5.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: $primary-txt-color-dark;
+}
+
+#snfx-portfolio-other p.lead {
+  font-weight: 400;
+}
+
+@media(min-width:768px) {
+  #snfx-portfolio-other {
+    min-height: 100%;
+  }
+}
