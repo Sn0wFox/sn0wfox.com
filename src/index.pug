@@ -75,7 +75,9 @@ html(lang="en")
     section.about#about
       .container
         .row
-          .col-lg-8.col-lg-offset-2
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="assets/images/me.jpg" alt="")
+          .col-sm-6.text-center
             span.glyphicon.glyphicon-comment(style="font-size: 60px")
             h2.section-heading About me, the snow and the fox
             p.text-light.text-justify My name is
@@ -95,10 +97,11 @@ html(lang="en")
               strong
                 a(href="https://www.youtube.com/watch?v=O3hrx2izSeI", target="_blank") Check this out.
               |  I'm also a bit musician, since I play guitar.
-            p.text-light.text-justify I like to try everything I hear about,
+          .col-sm-12.text-center
+            p.text-light.complementary-text I like to try everything I hear about,
               |  and that's most likely because i'm passionated. That's how sometimes I end up testing some new
               | cool frameworks before anyone else, i.e. when they are still in alpha release (someone said Angular2 ?).
-            p.text-light.text-justify I'm a huge robotic enthusiast,
+            p.text-light I'm a huge robotic enthusiast,
               |  even though my last work is mostly based on web technologies, which I find amazing.
               | I like to think that everyday brings me closer to a full stack developer profile.
               | You'll find more about my work and my skills in my portfolio and in my resume.
