@@ -1,3 +1,5 @@
-# sn0wfox.net
+# sn0wfox.com
 :snowflake: 🦊 A personal web site and portfolio.
-It's not available yet, but it will be soon!
+
+- You can access it here: [sn0wfox.com](http://sn0wfox.com).
+- The portfolio is available under [/portfolio](http://sn0wfox.com/portfolio).
