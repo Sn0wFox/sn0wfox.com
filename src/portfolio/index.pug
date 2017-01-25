@@ -36,11 +36,11 @@ html(lang="en")
   body
 
     // Navigation
-    nav#siteNav.navbar.navbar-default.navbar-fixed-top(role="navigation")
+    nav#snfx-site-nav.navbar.navbar-default.navbar-fixed-top(role="navigation")
       .container
         // Logo and responsive toggle
         .navbar-header
-          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar")
+          button.navbar-toggle(type="button" data-toggle="collapse" data-target="#snfx-navbar")
             span.sr-only Toggle navigation
             span.icon-bar
             span.icon-bar
@@ -51,7 +51,7 @@ html(lang="en")
               img#snfx-logo-orange(src="../assets/images/logo-orange.png" alt="Sn0wFox logo")
               |  Sn0wFox
         // Navbar links
-        .collapse.navbar-collapse#navbar
+        .collapse.navbar-collapse#snfx-navbar
           ul.nav.navbar-nav.navbar-right
             li.active
               a(href="#snfx-portfolio-header") Intro
@@ -121,11 +121,11 @@ html(lang="en")
               |  in France as a
               strong  Web Developper
               | . As part of a great team, I had two missions. Click below to enlighten you about them.
-            #accordion.panel-group(role='tablist', aria-multiselectable='true')
+            #snfx-accordion.panel-group(role='tablist', aria-multiselectable='true')
               .panel.panel-default
                 #snfx-small-one.panel-heading(role='tab')
                   h4.panel-title
-                    a(role='button', data-toggle='collapse', data-parent='#accordion', href='#snfx-collapse-one', aria-expanded='false', aria-controls='snfx-collapse-one')
+                    a(role='button', data-toggle='collapse', data-parent='#snfx-accordion', href='#snfx-collapse-one', aria-expanded='false', aria-controls='snfx-collapse-one')
                       | The side task
                 #snfx-collapse-one.panel-collapse.collapse(role='tabpanel', aria-labelledby='snfx-small-one')
                   .panel-body
@@ -143,7 +143,7 @@ html(lang="en")
               .panel.panel-default
                 #snfx-big-one.panel-heading(role='tab')
                   h4.panel-title
-                    a.collapsed(role='button', data-toggle='collapse', data-parent='#accordion', href='#snfx-collapse-two', aria-expanded='false', aria-controls='snfx-collapse-two')
+                    a.collapsed(role='button', data-toggle='collapse', data-parent='#snfx-accordion', href='#snfx-collapse-two', aria-expanded='false', aria-controls='snfx-collapse-two')
                       | The main task
                 #snfx-collapse-two.panel-collapse.collapse(role='tabpanel', aria-labelledby='snfx-big-one')
                   .panel-body
@@ -234,11 +234,11 @@ html(lang="en")
           .col-md-4.promo-item.item-3
             h3 Training
 
-    #imagemodal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
+    #snfx-imagemodal.modal.fade(tabindex='-1', role='dialog', aria-hidden='true')
       .modal-dialog.modal-lg
         .modal-content
           .modal-body
-            img#imagepreview(src="", alt="LRC 2014")
+            img#snfx-imagepreview(src="", alt="LRC 2014")
           .modal-footer
             button.btn.btn-default(type='button', data-dismiss='modal') Close
 

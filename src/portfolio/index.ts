@@ -8,7 +8,7 @@ let $chkbtn = $('#snfx-btn-chekit');
 // On document ready
 $document.ready(() => {
   // Init navbar
-  initNavBar('#siteNav', 1250);
+  initNavBar('#snfx-site-nav', 1250);
 
   // Init check it out button
   $chkbtn.on('click', (event: any) => {
@@ -23,7 +23,7 @@ $document.ready(() => {
   // Init modal LRC pictures
   $("#snfx-lrc-pictures").find("a").on("click", (event: any) => {
     console.log(event.currentTarget.attributes['href'].value);
-    $("#imagepreview").attr('src', event.currentTarget.attributes['href'].value);
-    $('#imagemodal').modal('show');
+    $("#snfx-imagepreview").attr('src', event.currentTarget.attributes['href'].value);
+    $('#snfx-imagemodal').modal('show');
   });
 });

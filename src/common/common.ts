@@ -12,8 +12,6 @@ export function initNavBar(navHash: string, scrollTime: number = 1000, navOffset
   // Jquery cache
   let $nav = $(navHash);
   let $body = $('body');
-  let $logo = $('#snfx-logo');
-  let $logo_o = $('#snfx-logo-orange');
 
   // Offset for Site Navigation
   $nav.affix({
