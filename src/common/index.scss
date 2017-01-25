@@ -440,6 +440,8 @@ header .header-content .header-content-inner p {
 footer a {
   color: $primary-txt-color;
 }
-footer a:hover {
+footer a:hover,
+footer a:focus,
+footer a:visited {
   color: $secondary-txt-color;
 }
