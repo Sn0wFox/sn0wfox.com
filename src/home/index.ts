@@ -1,9 +1,12 @@
 import { initNavBar,
   runAnimatedScroll } from '../common/common';
 
+declare let $: any;
+
 // Cache for jquery selectors
 let $document = $(document);
 let $discover = $('#snfx-discover');
+let $intro = $('#snfx-title');
 
 // On document ready
 $document.ready(() => {
@@ -18,5 +21,17 @@ $document.ready(() => {
         event.preventDefault();
         runAnimatedScroll(event.target.hash, 1000);
       }
+  });
+
+  $intro.typed({
+    strings: ["Welc^150ome"],
+    typeSpeed: 80,
+    startDelay: 1000,
+    onStringTyped: () => {
+      setTimeout(() => {
+        // Do something to make things appear
+      }, 1400);
+      console.log('typed!');
+    }
   });
 });
