@@ -7,6 +7,7 @@ declare let $: any;
 let $document = $(document);
 let $discover = $('#snfx-discover');
 let $intro = $('#snfx-title');
+let $introContent = $('#snfx-intro-content');
 
 // On document ready
 $document.ready(() => {
@@ -30,8 +31,10 @@ $document.ready(() => {
     onStringTyped: () => {
       setTimeout(() => {
         // Do something to make things appear
-      }, 1400);
-      console.log('typed!');
+        $introContent
+          .addClass("run-intro")
+          .removeClass("before-intro");
+      }, 700);
     }
   });
 });

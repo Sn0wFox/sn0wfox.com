@@ -87,6 +87,53 @@ header {
 }
 
 
+// ANIMATED INTRO
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.9s infinite;
+  -moz-animation: blink 0.9s infinite;
+  animation: blink 0.9s infinite;
+}
+
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+
+@keyframes show-intro {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.before-intro {
+  transform: translateY(100vh);
+}
+
+.run-intro {
+  animation-name: show-intro;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+
 // OTHER SECTIONS
 .content-2 {
   color: $secondary-txt-color;
@@ -130,27 +177,4 @@ img::-moz-selection {
 
 .bg-primary {
   background-color: $accent-color;
-}
-
-
-.typed-cursor{
-  opacity: 1;
-  -webkit-animation: blink 0.9s infinite;
-  -moz-animation: blink 0.9s infinite;
-  animation: blink 0.9s infinite;
-}
-@keyframes blink{
-  0% { opacity:1; }
-  50% { opacity:0; }
-  100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-  0% { opacity:1; }
-  50% { opacity:0; }
-  100% { opacity:1; }
-}
-@-moz-keyframes blink{
-  0% { opacity:1; }
-  50% { opacity:0; }
-  100% { opacity:1; }
 }
