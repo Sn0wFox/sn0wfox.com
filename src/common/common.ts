@@ -34,7 +34,6 @@ export function initNavBar(navHash: string, scrollTime: number = 1000, navOffset
   });
 }
 
-
 /**
  * Scrolls to the given hash during the given time.
  * @param hash The id to which scroll
@@ -49,4 +48,29 @@ export function runAnimatedScroll(hash: string, time: number): void {
     // Add hash (#) to URL when done scrolling (default click behavior)
     window.location.hash = hash;
   });
+}
+
+/**
+ * Decrypts mailto and makes the associated link clickable.
+ */
+export function decryptMailto(): void {
+  // Email obfuscator script 2.1 by Tim Williams, University of Arizona
+  // Random encryption key feature by Andrew Moulden, Site Engineering Ltd
+  // This code is freeware provided these four comment lines remain intact
+  // A wizard to generate this code is at http://www.jottings.com/obfuscator/
+  let coded = "O9g1t.I1ORdxh-4vwx@Rthx-Ewvt.MO";
+  let key = "KfZr87XaAsR4D9Iy3FejLYQvBdbtlV65MJONqkxChimWupwz01GTSHoUcgnE2P";
+  let shift= coded.length;
+  let link="";
+  for(let i = 0; i < coded.length; i++) {
+    if(key.indexOf(coded.charAt(i)) === -1) {
+      let ltr = coded.charAt(i);
+      link += (ltr)
+    }
+    else {
+      let ltr = (key.indexOf(coded.charAt(i)) - shift + key.length) % key.length;
+      link += (key.charAt(ltr));
+    }
+  }
+  $('#snfx-mailto').find('a').attr('href', 'mailto:' + link);
 }

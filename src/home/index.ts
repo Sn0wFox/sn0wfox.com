@@ -1,5 +1,6 @@
 import { initNavBar,
-  runAnimatedScroll } from '../common/common';
+  runAnimatedScroll,
+  decryptMailto } from '../common/common';
 
 declare let $: any;
 
@@ -37,4 +38,7 @@ $document.ready(() => {
       }, 700);
     }
   });
+
+  // Activates mailto link
+  decryptMailto();
 });

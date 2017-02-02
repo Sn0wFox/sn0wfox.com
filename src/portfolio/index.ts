@@ -1,5 +1,6 @@
 import { initNavBar,
-  runAnimatedScroll } from '../common/common';
+  runAnimatedScroll,
+  decryptMailto } from '../common/common';
 
 // Cache for jquery selectors
 let $document = $(document);
@@ -26,4 +27,7 @@ $document.ready(() => {
     $("#snfx-imagepreview").attr('src', event.currentTarget.attributes['href'].value);
     $('#snfx-imagemodal').modal('show');
   });
+
+  // Activates mailto link
+  decryptMailto();
 });
