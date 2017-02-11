@@ -69,17 +69,21 @@ p {
 
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
-  text-transform: none;
   line-height: 1;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
 }
 
 .icon-github:before {
@@ -90,6 +94,9 @@ p {
   content: "\e901";
 }
 
+.icon-sn0wfox:before {
+  content: "\e902";
+}
 
 // BUTTONS
 .btn-default {
