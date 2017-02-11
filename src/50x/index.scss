@@ -1,0 +1,59 @@
+@import '../common/index';
+
+#snfx-50x {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.35)
+  ), url('../assets/images/sn0w3.jpg');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#snfx-50x h1 {
+  margin-top: 0;
+  margin-bottom: $title-margin;
+  font-size: 50px;
+  font-weight: 300;
+  color: $primary-txt-color-dark;
+}
+
+#snfx-50x p {
+  margin-bottom: $p-margin-small;
+  color: $secondary-txt-color-dark;
+}
+
+@media(min-width: $min-size) {
+  #snfx-50x {
+    min-height: 100%;
+  }
+
+  #snfx-50x .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0 50px;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  #snfx-50x h1 {
+    font-size: 70px;
+  }
+
+  #snfx-50x p {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
+    font-size: 18px;
+    margin-bottom: $p-margin;
+  }
+}
