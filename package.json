@@ -4,7 +4,11 @@
   "description": "A personnal site and portfolio",
   "main": "dist/index.js",
   "scripts": {
-    "deploy": "gulp clean && gulp build",
+    "pre-prod": "npm install && gulp clean",
+    "prod": "cross-env SNFX_BUILD_MODE=prod gulp build",
+    "dev": "cross-env SNFX_BUILD_MODE=dev gulp build:ts",
+    "debug-prod": "cross-env SNFX_DEBUG_MODE=true npm run prod",
+    "debug-dev": "cross-env SNFX_DEBUG_MODE=true npm run dev",
     "test": "echo No tests specified yet && exit(0)"
   },
   "repository": {
@@ -30,8 +34,11 @@
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
+    "progress-bar-webpack-plugin": "^1.10.0",
     "typescript": "^2.5.3",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
