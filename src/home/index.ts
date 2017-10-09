@@ -2,12 +2,14 @@ import { initNavBar,
   runAnimatedScroll,
   decryptMailto } from '../common/common';
 
-declare let $: any;
+import * as $     from 'jquery';
+import * as Typed from 'typed.js'
+
+// TODO: polyfill
 
 // Cache for jquery selectors
 let $document = $(document);
 let $discover = $('#snfx-discover');
-let $intro = $('#snfx-title');
 let $introContent = $('#snfx-intro-content');
 
 // On document ready
@@ -25,7 +27,7 @@ $document.ready(() => {
       }
   });
 
-  $intro.typed({
+  let intro = new Typed('#snfx-title', {
     strings: ["Welc^150ome"],
     typeSpeed: 80,
     startDelay: 1000,
@@ -38,6 +40,7 @@ $document.ready(() => {
       }, 700);
     }
   });
+  intro.start();
 
   // Activates mailto link
   decryptMailto();
