@@ -25,6 +25,7 @@
     "@types/bootstrap": "^3.3.36",
     "@types/jquery": "^2.0.48",
     "awesome-typescript-loader": "^3.2.3",
+    "cross-env": "^5.0.5",
     "del": "^3.0.0",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-pug": "^3.3.0",
@@ -34,7 +35,10 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+    "bootstrap": "^4.0.0-beta",
+    "jquery": "^3.1.1",
+    "popper.js": "^1.12.5",
+    "scrollpos-styler": "git://github.com/Sn0wFox/scrollpos-styler.git#master",
+    "typed.js": "^2.0.6"
   }
 }
