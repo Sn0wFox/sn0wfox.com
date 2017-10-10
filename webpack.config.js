@@ -1,9 +1,11 @@
 const path    = require('path');
+const util    = require('util');
 const webpack = require('webpack');
 
 const UglifyJSPlugin        = require('uglifyjs-webpack-plugin');
 const ProgressBarPlugin     = require('progress-bar-webpack-plugin');
 const BundleAnalyzerPlugin  = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WebpackNotifierPlugin = require('webpack-build-notifier');
 
 const PROD  = process.env.SNFX_BUILD_MODE === 'prod';
 const DEV   = process.env.SNFX_BUILD_MODE === 'dev';
@@ -18,13 +20,13 @@ const DEBUG = !!process.env.SNFX_DEBUG_MODE;
 module.exports = {
   entry: {
     vendor: ['bootstrap'],
-    home: './src/home/index.ts',
-    portfolio: './src/portfolio/index.ts'
+    home: './src/app/home/index.ts',
+    portfolio: './src/app/portfolio/index.ts'
   },
 
   output: {
     publicPath: '',
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, './dist'),
     filename: PROD ? '[name].[hash].js' : '[name].js',
     sourceMapFilename: PROD ? '[name].[hash].map' : '[name].map'
   },
@@ -56,9 +58,10 @@ module.exports = {
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         minChinks: 2
-      })
+      }),
 
-    ];
+      new ProgressBarPlugin()
+  ];
 
     // Prod only plugins
     if(PROD) {
@@ -75,13 +78,19 @@ module.exports = {
       }));
 
       plugins.push(new webpack.optimize.DedupePlugin());
-
-      plugins.push(new ProgressBarPlugin());
     }
 
     // Dev only plugins
     if(DEV) {
-
+      plugins.push(new WebpackNotifierPlugin({
+        title: 'Sn0wFox builder - Webpack',
+        sound: false,
+        logo: path.resolve(__dirname, 'src/assets/images/logo.png'),
+        successIcon: path.resolve(__dirname, 'src/assets/images/logo.png'),
+        warningIcon: path.resolve(__dirname, 'src/assets/images/logo-black.png'),
+        failureIcon: path.resolve(__dirname, 'src/assets/images/logo-black.png'),
+        messageFormatter: (err) => err.message.replace(/\n/, '\r').replace(/    /, '')
+      }));
     }
 
     // Debug only plugins
@@ -100,7 +109,7 @@ module.exports = {
 
   watch: DEV,
   watchOptions: {
-    aggregateTimeout: 200,
+    aggregateTimeout: 400,
     ignored: /node_modules/
   }
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "pre-prod": "npm install && gulp clean",
     "prod": "cross-env SNFX_BUILD_MODE=prod gulp build",
-    "dev": "cross-env SNFX_BUILD_MODE=dev gulp build:ts",
+    "dev": "cross-env SNFX_BUILD_MODE=dev gulp build",
     "debug-prod": "cross-env SNFX_DEBUG_MODE=true npm run prod",
     "debug-dev": "cross-env SNFX_DEBUG_MODE=true npm run dev",
     "test": "echo No tests specified yet && exit(0)"
@@ -29,15 +29,19 @@
     "@types/bootstrap": "^3.3.36",
     "@types/jquery": "^2.0.48",
     "awesome-typescript-loader": "^3.2.3",
+    "colors": "^1.1.2",
     "cross-env": "^5.0.5",
     "del": "^3.0.0",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "node-notifier": "^5.1.2",
     "progress-bar-webpack-plugin": "^1.10.0",
     "typescript": "^2.5.3",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",
+    "webpack-build-notifier": "^0.1.16",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-stream": "^4.0.0"
   },
