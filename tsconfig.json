@@ -2,14 +2,14 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "outDir": "build",
+    "outDir": "dist",
     "rootDir": ".",
     "noImplicitAny": true,
     "sourceMap": true,
     "moduleResolution": "node",
     "typeRoots": [
       "node_modules/@types",
-      "custom_typings"
+      "src/custom_typings"
     ],
     "lib": ["es6", "dom"]
   },
