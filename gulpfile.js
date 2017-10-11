@@ -142,6 +142,10 @@ function buildAssets() {
 Object.defineProperty(buildAssets, 'name', {value: 'build:assets'});
 
 
+/****************************
+ * HELPERS
+ ****************************/
+
 /**
  * A generic function to send a notification to the user.
  * @param module The module's name.
