@@ -1,11 +1,11 @@
 # IDE related files
-.idea
+.idea/
 
 # Node modules
-node_modules
+node_modules/
 
 # Templates used
-template
+template/
 
-# Build folder
-dist
+# Build folders
+dist/

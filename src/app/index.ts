@@ -1,6 +1,6 @@
 import { initNavBar,
   runAnimatedScroll,
-  decryptMailto } from '../common/common';
+  decryptMailto } from './common/common';
 
 import * as $     from 'jquery';
 import * as Typed from 'typed.js'

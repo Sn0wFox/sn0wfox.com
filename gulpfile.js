@@ -8,6 +8,7 @@ const del       = require('del');             // To erase some file during clean
 const path      = require('path');            // To manage path expressions correctly
 const webpack   = require('webpack');         // Local webpack lib
 const notifier  = require('node-notifier');   // To show notifications
+const merge     = require('merge-stream');    // To merge several streams
 
 require('colors');
 
@@ -18,10 +19,22 @@ require('colors');
 const wpconf        = require('./webpack.config.js');         // Local webpack config
 const DEV           = process.env.SNFX_BUILD_MODE === 'dev';  // Dev mode or not
 
-const SRC_ROOT      = 'src';
-const DIST_ROOT     = 'dist';
-const ASSETS_FOLDER = 'assets';
-const ASSETS_ROOT   = path.join(SRC_ROOT, ASSETS_FOLDER);
+const SRC_ROOT        = 'src';
+const APP_FOLDER      = 'app';
+const ASSETS_FOLDER   = 'assets';
+const DIST_ROOT       = 'dist';
+const APP_ROOT        = path.join(SRC_ROOT, APP_FOLDER);
+const DIST_APP        = path.join(DIST_ROOT, APP_FOLDER);
+const DIST_ASSETS     = path.join(DIST_APP, ASSETS_FOLDER);
+const ASSETS_ROOT     = path.join(SRC_ROOT, ASSETS_FOLDER);
+const BOOTSTRAP_ROOT  = path.join('node_modules', 'bootstrap');
+
+const features = [
+  '.',
+  'portfolio',
+  '50x',
+  '404'
+];
 
 
 /****************************
@@ -29,13 +42,15 @@ const ASSETS_ROOT   = path.join(SRC_ROOT, ASSETS_FOLDER);
  ****************************/
 
 /**
- * Builds all files needed an watch non-Ts/Js files.
+ * Builds all files needed.
  * If the build mode is set to dev it also enables
- * build notifications and Webpack watcher.
+ * build notifications and sources watchers.
  */
 gulp.task('build', (done) => {
   gulp.parallel(buildPug, buildSass, buildAssets)((error) => {
+    let next = [buildTs];
     if(DEV) {
+      next.push('watch');
       let notifierOptions = {
         title: 'Sn0wFox.com builder',
         sound: false
@@ -49,7 +64,7 @@ gulp.task('build', (done) => {
       gutil.log('[ERROR]'.red, error);
     }
 
-    gulp.parallel('watch', buildTs)(done);
+    gulp.parallel(next)(done);
   });
 });
 
@@ -93,7 +108,7 @@ Object.defineProperty(buildTs, 'name', {value: 'build:ts'});
 function buildPug() {
   let error = null;
   return gulp
-    .src(path.join(SRC_ROOT, '/**/*.pug'))
+    .src(buildEntries('pug'), {base: APP_ROOT})
     .pipe(gpug())
     .on('error', function(err) {
       error = err;
@@ -101,17 +116,17 @@ function buildPug() {
       this.emit('end');
     })
     .on('end', () => notify('Pug', error))
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(gulp.dest(DIST_APP));
 }
 Object.defineProperty(buildPug, 'name', {value: 'build:pug'});
 
 /**
- * Compiles Sass (.sass and .scss) files at the root of src/.
+ * Compiles Sass (.scss) files.
  */
 function buildSass() {
   let error = null;
   return gulp
-    .src([path.join(SRC_ROOT, '/**/*.scss'), path.join(SRC_ROOT, '/**/*.sass')])
+    .src(buildEntries('scss'), {base: APP_ROOT})
     .pipe(gsass())
     .on('error', function(err) {
       error = err;
@@ -119,7 +134,7 @@ function buildSass() {
       this.emit('end');
     })
     .on('end', () => notify('Sass', error))
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(gulp.dest(DIST_APP));
 }
 Object.defineProperty(buildSass, 'name', {value: 'build:sass'});
 
@@ -129,15 +144,18 @@ Object.defineProperty(buildSass, 'name', {value: 'build:sass'});
  */
 function buildAssets() {
   let error = null;
-  return gulp
-    .src(path.join(ASSETS_ROOT, '/**/*'), {base: SRC_ROOT})
+  return merge(
+    gulp.src(path.join(ASSETS_ROOT, '/**/*'), {base: SRC_ROOT}),
+    gulp.src(path.join(BOOTSTRAP_ROOT, 'fonts/*'), {base: BOOTSTRAP_ROOT}))
     .on('error', function(err) {
       error = err;
       gutil.log('[ERROR]'.red, error.message);
       this.emit('end');
     })
     .on('end', () => notify('Assets', error))
-    .pipe(gulp.dest(DIST_ROOT));
+    .pipe(gulp.dest((file) => {
+      return file.base === SRC_ROOT ? DIST_APP : DIST_ASSETS;
+    }));
 }
 Object.defineProperty(buildAssets, 'name', {value: 'build:assets'});
 
@@ -161,4 +179,16 @@ function notify(module, error) {
     notifierOptions.icon = error ? path.join(__dirname, ASSETS_ROOT, 'images/logo-black.png') : path.join(__dirname, ASSETS_ROOT, 'images/logo.png');
     notifier.notify(notifierOptions);
   }
+}
+
+/**
+ * A generic function to build entry points of a given
+ * file extension, based on Sn0wFox.com features.
+ * @param ext The extension to build entry points for.
+ * @returns {Array} The array of entry points.
+ */
+function buildEntries(ext) {
+  return features.map((feature) => {
+    return path.join(APP_ROOT, feature, 'index.' + ext)
+  });
 }

@@ -18,16 +18,16 @@ const DEBUG = !!process.env.SNFX_DEBUG_MODE;
  */
 module.exports = {
   entry: {
-    vendor: ['bootstrap'],
-    home: './src/app/home/index.ts',
-    portfolio: './src/app/portfolio/index.ts'
+    vendor: ['jquery', 'bootstrap'],
+    home: './src/app/index.ts',
+    'portfolio/index': './src/app/portfolio/index.ts'
   },
 
   output: {
     publicPath: '',
     path: path.resolve(__dirname, './dist'),
-    filename: PROD ? '[name].[hash].js' : '[name].js',
-    sourceMapFilename: PROD ? '[name].[hash].map' : '[name].map'
+    filename: path.join('app', PROD ? '[name].[hash].js' : '[name].js'),
+    sourceMapFilename: path.join('app', PROD ? '[name].[hash].map' : '[name].map')
   },
 
   resolve: {

@@ -36,6 +36,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "gulp-util": "^3.0.8",
+    "merge-stream": "^1.0.1",
     "node-notifier": "^5.1.2",
     "progress-bar-webpack-plugin": "^1.10.0",
     "typescript": "^2.5.3",
@@ -46,7 +47,7 @@
     "webpack-stream": "^4.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0-beta",
+    "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
     "popper.js": "^1.12.5",
     "scrollpos-styler": "git://github.com/Sn0wFox/scrollpos-styler.git#master",
