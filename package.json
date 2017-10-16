@@ -6,7 +6,9 @@
   "scripts": {
     "pre-prod": "npm install && gulp clean",
     "prod": "cross-env SNFX_BUILD_MODE=prod gulp build",
-    "dev": "cross-env SNFX_BUILD_MODE=dev gulp build",
+    "dev:build": "gulp build",
+    "dev:server": "node src/dev-server.js",
+    "dev": "cross-env SNFX_BUILD_MODE=dev concurrently --kill-others \"npm run dev:build\" \"npm run dev:server\"",
     "debug-prod": "cross-env SNFX_DEBUG_MODE=true npm run prod",
     "debug-dev": "cross-env SNFX_DEBUG_MODE=true npm run dev",
     "test": "echo No tests specified yet && exit(0)"
@@ -30,8 +32,10 @@
     "@types/jquery": "^2.0.48",
     "awesome-typescript-loader": "^3.2.3",
     "colors": "^1.1.2",
+    "concurrently": "^3.5.0",
     "cross-env": "^5.0.5",
     "del": "^3.0.0",
+    "express": "^4.16.2",
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
