@@ -1,6 +1,4 @@
-import * as Sps from 'scrollpos-styler';
-import * as $   from 'jquery';
-import 'bootstrap';
+import * as $ from 'jquery';
 
 /**
  * Initialize the navbar:
@@ -18,11 +16,10 @@ export function initNavBar(navHash: string, scrollTime: number = 1000, navOffset
   let $body = $('body');
 
   // Offset for Site Navigation
-  Sps.init({
-    scrollOffsetY: 100,
-    spsClass: 'sps',
-    classAbove: 'no-affix',
-    classBelow: 'affix'
+  $nav.affix({
+    offset: {
+      top: 100
+    }
   });
 
   // Add scrollspy to body
