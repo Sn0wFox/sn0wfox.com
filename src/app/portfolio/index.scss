@@ -1,12 +1,12 @@
+@import '../../../node_modules/bootstrap/dist/css/bootstrap';
 @import '../common/_common';
-
 
 // HEADER
 header {
   background-image: linear-gradient(
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.25)
-  ), url('../../assets/images/sn0w.jpg');
+  ), url('/assets/images/sn0w.jpg');
 }
 
 blockquote {
@@ -47,7 +47,7 @@ blockquote footer {
   background-image: linear-gradient(
     rgba(245, 245, 245, 0.7),
     rgba(245, 245, 245, 0.7)
-  ), url('../../assets/images/sn0w2.jpg');
+  ), url('/assets/images/sn0w2.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -81,7 +81,7 @@ blockquote footer {
   background-image: linear-gradient(
     rgba(10, 10, 10, 0.1),
     rgba(10, 10, 10, 0.1)
-  ), url('../../assets/images/sn0w4.jpg');
+  ), url('/assets/images/sn0w4.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -136,15 +136,15 @@ blockquote footer {
 }
 
 .item-1 {
-  background: url('../../assets/images/lrc0.jpg');
+  background: url('/assets/images/lrc0.jpg');
 }
 
 .item-2 {
-  background: url('../../assets/images/lrc1.jpg');
+  background: url('/assets/images/lrc1.jpg');
 }
 
 .item-3 {
-  background: url('../../assets/images/lrc2.jpg');
+  background: url('/assets/images/lrc2.jpg');
 }
 
 .item-1,
@@ -171,7 +171,7 @@ blockquote footer {
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.5)
-  ), url('../../assets/images/sn0w5.jpg');
+  ), url('/assets/images/sn0w5.jpg');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

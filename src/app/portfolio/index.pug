@@ -9,17 +9,18 @@ html(lang="en")
     // Right favicon for the right device. Hell yeah: https://realfavicongenerator.net
     meta(name="msapplication-config" content="images/browserconfig.xml")
     meta(name="theme-color" content="#ffffff")
-    link(rel="apple-touch-icon" sizes="180x180" href="../assets/images/apple-touch-icon.png")
-    link(rel="icon" type="image/png" href="../assets/images/favicon-32x32.png" sizes="32x32")
-    link(rel="icon" type="image/png" href="../assets/images/favicon-16x16.png" sizes="16x16")
-    link(rel="manifest" href="../assets/images/manifest.json")
-    link(rel="mask-icon" href="../assets/images/safari-pinned-tab.svg" color="#5bbad5")
-    link(rel="shortcut icon" href="../assets/images/favicon.ico")
+    link(rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png")
+    link(rel="icon" type="image/png" href="/assets/images/favicon-32x32.png" sizes="32x32")
+    link(rel="icon" type="image/png" href="/assets/images/favicon-16x16.png" sizes="16x16")
+    link(rel="manifest" href="/assets/images/manifest.json")
+    link(rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#5bbad5")
+    link(rel="shortcut icon" href="/assets/images/favicon.ico")
 
     title Sn0wFox - Portfolio
 
-    // Bootstrap Core css
-    link(href="../assets/css/bootstrap.min.css" rel="stylesheet")
+    // Vendor js
+    script(src="/vendor.js")
+
     // Custom css
     link(href="index.css" rel="stylesheet")
 
@@ -47,8 +48,8 @@ html(lang="en")
             span.icon-bar
           a.navbar-brand(href="..")
             span
-              img#snfx-logo(src="../assets/images/logo.png" alt="Sn0wFox logo")
-              img#snfx-logo-orange(src="../assets/images/logo-orange.png" alt="Sn0wFox logo")
+              img#snfx-logo(src="/assets/images/logo.png" alt="Sn0wFox logo")
+              img#snfx-logo-orange(src="/assets/images/logo-orange.png" alt="Sn0wFox logo")
               |  Sn0wFox
         // Navbar links
         .collapse.navbar-collapse#snfx-navbar
@@ -85,7 +86,7 @@ html(lang="en")
       .container
         .row
           .col-sm-6
-            img.img-responsive.img-circle.center-block(src="../assets/images/manmanga.jpg" alt="Picture from an anime")
+            img.img-responsive.img-circle.center-block(src="/assets/images/manmanga.jpg" alt="Picture from an anime")
           .col-sm-6.text-center
             h2.section-header ManManga
             p.lead.text-muted.text-justify ManManga is a dedicated <strong>search engine</strong> for manga and anime.
@@ -167,14 +168,14 @@ html(lang="en")
                     p.text-justify Unfortunately, this is a private work of the company I worked for,
                       |  so I can not provide the source code nor a screenshot of the result.
           .col-sm-6
-            img.img-responsive.img-circle.center-block(src="../assets/images/internship.jpg" alt="Picture representing summer internship")
+            img.img-responsive.img-circle.center-block(src="/assets/images/internship.jpg" alt="Picture representing summer internship")
 
     // This website
     section.content#snfx-portfolio-snfx
       .container
         .row
           .col-sm-6
-            img.img-responsive.img-circle.center-block(src="../assets/images/this.jpg" alt="Home of sn0wfox.com")
+            img.img-responsive.img-circle.center-block(src="/assets/images/this.jpg" alt="Home of sn0wfox.com")
           .col-sm-6.text-center
             h2.section-header This web site
             p.lead.text-muted.text-justify Because hey, I'm proud of the result !
@@ -210,7 +211,7 @@ html(lang="en")
               | . We spent all night to do so,
               | and we actually won the tournament this year - we were pretty happy!
           .col-sm-6
-            img.img-responsive.img-circle.center-block(src="../assets/images/lrc.jpg" alt="A Lego Mindstorm robot")
+            img.img-responsive.img-circle.center-block(src="/assets/images/lrc.jpg" alt="A Lego Mindstorm robot")
           .col-sm-12.text-center
             p.lead.text-ligh.complementary-text I used the C++ library that you'll find by clicking
               |  on the following button to program the robot. However I'll keep the actual code of the tournament
@@ -225,13 +226,13 @@ html(lang="en")
     // LRC pictures
     .container-fluid#snfx-lrc-pictures
       .row.promo
-        a(href="../assets/images/lrc0.jpg" data-toggle="modal" data-target="#hack")
+        a(href="/assets/images/lrc0.jpg" data-toggle="modal" data-target="#hack")
           .col-md-4.promo-item.item-1
             h3 Some Maths
-        a(href="../assets/images/lrc1.jpg" data-toggle="modal" data-target="#hack2")
+        a(href="/assets/images/lrc1.jpg" data-toggle="modal" data-target="#hack2")
           .col-md-4.promo-item.item-2
             h3 The robot
-        a(href="../assets/images/lrc2.jpg" data-toggle="modal" data-target="#hack3")
+        a(href="/assets/images/lrc2.jpg" data-toggle="modal" data-target="#hack3")
           .col-md-4.promo-item.item-3
             h3 Training
 
@@ -326,15 +327,5 @@ html(lang="en")
         .container
           p Copyright &copy; Ruben P&eacute;ricas-Moya 2017
 
-    // Scripts
-    // Jquery
-    script(src="../assets/js/jquery-1.11.3.min.js")
-
-    // Bootstrap Core JavaScript
-    script(src="../assets/js/bootstrap.min.js")
-
-    // Plugin JavaScript
-    script(src="../assets/js/jquery.easing.min.js")
-
     // Custom Javascript
-    script(src="main.bundle.js")
+    script(src="index.js")

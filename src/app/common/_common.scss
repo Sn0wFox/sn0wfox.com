@@ -57,22 +57,21 @@ p {
 // Fix bootstrap font path by overriding it
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('assets/fonts/glyphicons-halflings-regular.eot');
-  src: url('assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('assets/fonts/glyphicons-halflings-regular.woff') format('woff'), url('assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('assets/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  src: url('/assets/fonts/glyphicons-halflings-regular.eot');
+  src: url('/assets/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/fonts/glyphicons-halflings-regular.woff') format('woff'), url('/assets/fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
 // CUSTOM ICONS
 @font-face {
   font-family: 'icomoon';
-  src:  url('assets/fonts/icomoon.eot?al7o0l');
-  src:  url('assets/fonts/icomoon.eot?al7o0l#iefix') format('embedded-opentype'),
-    url('assets/fonts/icomoon.ttf?al7o0l') format('truetype'),
-    url('assets/fonts/icomoon.woff?al7o0l') format('woff'),
-    url('assets/fonts/icomoon.svg?al7o0l#icomoon') format('svg');
+  src:  url('/assets/fonts/icomoon.eot?al7o0l');
+  src:  url('/assets/fonts/icomoon.eot?al7o0l#iefix') format('embedded-opentype'),
+    url('/assets/fonts/icomoon.ttf?al7o0l') format('truetype'),
+    url('/assets/fonts/icomoon.woff?al7o0l') format('woff'),
+    url('/assets/fonts/icomoon.svg?al7o0l#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-
 
 
 [class^="icon-"], [class*=" icon-"] {
