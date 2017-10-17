@@ -32,6 +32,8 @@ export function initNavBar(navHash: string, scrollTime: number = 1000, navOffset
       // Prevent default anchor click behavior
       event.preventDefault();
       runAnimatedScroll(event.target.hash, scrollTime);
+      // Hide menu once clicked
+      $('#snfx-navbar').collapse('hide');
     }
   });
 }
