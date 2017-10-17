@@ -39,6 +39,7 @@
     "gulp": "git://github.com/gulpjs/gulp.git#4.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-util": "^3.0.8",
     "merge-stream": "^1.0.1",
     "node-notifier": "^5.1.2",

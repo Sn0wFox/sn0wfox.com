@@ -3,6 +3,7 @@ const gsass     = require('gulp-sass');       // To compile sass & scss files
 const gpug      = require('gulp-pug');        // To compile pug files
 const gwebpack  = require('webpack-stream');  // To use webpack with gulp
 const gutil     = require('gulp-util');       // To log anything gulp style
+const gmaps     = require('gulp-sourcemaps'); // To generate Sass source maps
 
 const del       = require('del');             // To erase some file during cleaning tasks
 const path      = require('path');            // To manage path expressions correctly
@@ -16,8 +17,9 @@ require('colors');
  * CONFIG
  ****************************/
 
-const wpconf        = require('./webpack.config.js');         // Local webpack config
-const DEV           = process.env.SNFX_BUILD_MODE === 'dev';  // Dev mode or not
+const wpconf          = require('./webpack.config.js');         // Local webpack config
+const DEV             = process.env.SNFX_BUILD_MODE === 'dev';  // Dev mode or not
+const PROD            = process.env.SNFX_BUILD_MODE === 'prod'; // Prod mode or not
 
 const SRC_ROOT        = 'src';
 const APP_FOLDER      = 'app';
@@ -127,13 +129,17 @@ function buildSass() {
   let error = null;
   return gulp
     .src(buildEntries('scss'), {base: APP_ROOT})
-    .pipe(gsass())
+    .pipe(gmaps.init({loadMaps: true, largeFile: true}))
+    .pipe(gsass({
+      outputStyle: PROD ? 'compressed' : 'nested'
+    }))
     .on('error', function(err) {
       error = err;
       gutil.log('[ERROR]'.red, error.message);
       this.emit('end');
     })
     .on('end', () => notify('Sass', error))
+    .pipe(gmaps.write('.', {destPath: DIST_APP}))
     .pipe(gulp.dest(DIST_APP));
 }
 Object.defineProperty(buildSass, 'name', {value: 'build:sass'});
