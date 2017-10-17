@@ -1,15 +1,16 @@
-const gulp      = require('gulp');            // Local gulp lib
-const gsass     = require('gulp-sass');       // To compile sass & scss files
-const gpug      = require('gulp-pug');        // To compile pug files
-const gwebpack  = require('webpack-stream');  // To use webpack with gulp
-const gutil     = require('gulp-util');       // To log anything gulp style
-const gmaps     = require('gulp-sourcemaps'); // To generate Sass source maps
+const gulp      = require('gulp');              // Local gulp lib
+const gsass     = require('gulp-sass');         // To compile sass & scss files
+const gpug      = require('gulp-pug');          // To compile pug files
+const gwebpack  = require('webpack-stream');    // To use webpack with gulp
+const gutil     = require('gulp-util');         // To log anything gulp style
+const gmaps     = require('gulp-sourcemaps');   // To generate Sass source maps
+const grevrep   = require('gulp-rev-replace');  // To generate Sass source maps
 
-const del       = require('del');             // To erase some file during cleaning tasks
-const path      = require('path');            // To manage path expressions correctly
-const webpack   = require('webpack');         // Local webpack lib
-const notifier  = require('node-notifier');   // To show notifications
-const merge     = require('merge-stream');    // To merge several streams
+const del       = require('del');               // To erase some file during cleaning tasks
+const path      = require('path');              // To manage path expressions correctly
+const webpack   = require('webpack');           // Local webpack lib
+const notifier  = require('node-notifier');     // To show notifications
+const merge     = require('merge-stream');      // To merge several streams
 
 require('colors');
 
@@ -60,13 +61,15 @@ gulp.task('build', (done) => {
       notifierOptions.message = error ? '[ERROR] Build failed. See terminal.' : 'Build successful.';
       notifierOptions.icon = error ? path.join(__dirname, ASSETS_ROOT, 'images/logo-black.png') : path.join(__dirname, ASSETS_ROOT, 'images/logo.png');
       notifier.notify(notifierOptions);
+    } else if(PROD) {
+      next.push(cacheBust);
     }
 
     if(error) {
       gutil.log('[ERROR]'.red, error);
     }
 
-    gulp.parallel(next)(done);
+    gulp.series(next)(done);
   });
 });
 
@@ -164,6 +167,23 @@ function buildAssets() {
     }));
 }
 Object.defineProperty(buildAssets, 'name', {value: 'build:assets'});
+
+/**
+ *
+ */
+function cacheBust() {
+  return gulp
+    .src(buildEntries('html').map((out) => out.replace(APP_ROOT, DIST_APP)), {base: APP_ROOT})
+    // .pipe(grevrep({
+    //   manifest: gulp.src(path.join(DIST_APP, 'manifest.css.json'))
+    // }))
+    .pipe(grevrep({
+      manifest: gulp.src(path.join(DIST_ROOT, 'manifest.js.json')),
+      modifyReved: (file) => path.posix.relative(APP_FOLDER, file)
+    }))
+    .pipe(gulp.dest(DIST_APP));
+}
+Object.defineProperty(buildAssets, 'name', {value: 'build:cache-bust'});
 
 
 /****************************

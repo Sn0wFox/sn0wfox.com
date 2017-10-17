@@ -5,6 +5,7 @@ const UglifyJSPlugin        = require('uglifyjs-webpack-plugin');
 const ProgressBarPlugin     = require('progress-bar-webpack-plugin');
 const BundleAnalyzerPlugin  = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackNotifierPlugin = require('webpack-build-notifier');
+const ManifestPlugin        = require('webpack-manifest-plugin');
 
 const PROD  = process.env.SNFX_BUILD_MODE === 'prod';
 const DEV   = process.env.SNFX_BUILD_MODE === 'dev';
@@ -76,6 +77,11 @@ module.exports = {
         sourceMap: true
       }));
 
+      plugins.push(new ManifestPlugin({
+        fileName: 'manifest.js.json'
+      }));
+
+      // TODO: remove (see prod warning)
       plugins.push(new webpack.optimize.DedupePlugin());
     }
 
