@@ -1,10 +1,12 @@
 const gulp      = require('gulp');              // Local gulp lib
 const gsass     = require('gulp-sass');         // To compile sass & scss files
+const gcsso     = require('gulp-csso');         // To compile optimize css
 const gpug      = require('gulp-pug');          // To compile pug files
 const gwebpack  = require('webpack-stream');    // To use webpack with gulp
 const gutil     = require('gulp-util');         // To log anything gulp style
 const gmaps     = require('gulp-sourcemaps');   // To generate Sass source maps
-const grevrep   = require('gulp-rev-replace');  // To generate Sass source maps
+const grev      = require('gulp-rev');          // To mark files for cache busting
+const grevrep   = require('gulp-rev-replace');  // To automatize cache busted imports
 
 const del       = require('del');               // To erase some file during cleaning tasks
 const path      = require('path');              // To manage path expressions correctly
@@ -130,12 +132,18 @@ Object.defineProperty(buildPug, 'name', {value: 'build:pug'});
  */
 function buildSass() {
   let error = null;
-  return gulp
-    .src(buildEntries('scss'), {base: APP_ROOT})
+  let stream = gulp
+    .src(buildEntries('scss'), {base: path.join(process.cwd(), APP_ROOT)})
     .pipe(gmaps.init({loadMaps: true, largeFile: true}))
-    .pipe(gsass({
-      outputStyle: PROD ? 'compressed' : 'nested'
-    }))
+    .pipe(gsass());
+
+  if(PROD) {
+    stream
+      .pipe(gcsso())
+      .pipe(grev());
+  }
+
+  stream
     .on('error', function(err) {
       error = err;
       gutil.log('[ERROR]'.red, error.message);
@@ -144,6 +152,16 @@ function buildSass() {
     .on('end', () => notify('Sass', error))
     .pipe(gmaps.write('.', {destPath: DIST_APP}))
     .pipe(gulp.dest(DIST_APP));
+
+  if(PROD) {
+    stream
+      .pipe(grev.manifest({
+        path: 'manifest.css.json'
+      }))
+      .pipe(gulp.dest(DIST_ROOT));
+  }
+
+  return stream;
 }
 Object.defineProperty(buildSass, 'name', {value: 'build:sass'});
 
@@ -169,21 +187,22 @@ function buildAssets() {
 Object.defineProperty(buildAssets, 'name', {value: 'build:assets'});
 
 /**
- *
+ * Replace the imports tags in HTML using revision numbers
+ * to cache bust css and js assets.
  */
 function cacheBust() {
   return gulp
     .src(buildEntries('html').map((out) => out.replace(APP_ROOT, DIST_APP)), {base: APP_ROOT})
-    // .pipe(grevrep({
-    //   manifest: gulp.src(path.join(DIST_APP, 'manifest.css.json'))
-    // }))
+    .pipe(grevrep({
+      manifest: gulp.src(path.join(DIST_ROOT, 'manifest.css.json'))
+    }))
     .pipe(grevrep({
       manifest: gulp.src(path.join(DIST_ROOT, 'manifest.js.json')),
       modifyReved: (file) => path.posix.relative(APP_FOLDER, file)
     }))
     .pipe(gulp.dest(DIST_APP));
 }
-Object.defineProperty(buildAssets, 'name', {value: 'build:cache-bust'});
+Object.defineProperty(cacheBust, 'name', {value: 'build:cache-bust'});
 
 
 /****************************
