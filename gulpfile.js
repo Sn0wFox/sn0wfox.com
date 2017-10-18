@@ -79,7 +79,7 @@ gulp.task('build', (done) => {
  * Cleans the dist folder by removing it.
  */
 gulp.task('clean', () => {
-  return del(path.join(DIST_ROOT, '**/*'));
+  return del(DIST_ROOT);
 });
 
 /**
