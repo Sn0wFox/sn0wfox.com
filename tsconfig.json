@@ -8,7 +8,8 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "src/custom_typings"
     ],
     "lib": ["es6", "dom"]
   },
@@ -19,6 +20,5 @@
     "useWebpackText": true
   },
   "compileOnSave": false,
-  "buildOnSave": false,
-  "atom": { "rewriteTsconfig": false }
+  "buildOnSave": false
 }

@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+
+  head
+    include ../common/meta
+    title Sn0wFox - 50x
+    include ../common/imports
+
+    // Custom css
+    link(href="/50x/index.css" rel="stylesheet")
+
+  body
+    section#snfx-50x
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            h1 Woh!
+              h2 Something strange happened.
+              br
+              h4 It's most likely linked to this server. I'm probably trying to fix it,
+                |  or will be on it soon.
+                | Still, you can try to retrace your steps to your previous location,
+                | or simply return to the home page by clicking on the following button.
+              br
+              a.btn.btn-primary.btn-lg#snfx-btn-home(href="http://sn0wfox.com")
+                span.glyphicon.icon-sn0wfox(aria-hidden="true")
+                  |  Home

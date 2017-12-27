@@ -1,0 +1,88 @@
+doctype html
+html(lang="en")
+
+  head
+    include common/meta
+    title Sn0wFox - Home
+    include common/imports
+
+    // Custom css
+    link(href="index.css" rel="stylesheet")
+
+  body
+
+    // Navigation
+    include common/nav.mixin.pug
+    +navbar({
+      'Home': '#snfx-intro',
+      'About': '#snfx-about',
+      'Resume': '#snfx-resume',
+      'Contact': '#snfx-contact',
+      'Portfolio': 'portfolio'
+    })
+
+    // Header
+    header#snfx-intro
+      .header-content
+        .header-content-inner
+          h1
+            span#snfx-title
+          #snfx-intro-content.before-intro
+            p I'm Sn0wFox - a developer & computer science student - and this is my website. Here, you'll find information about me and my work.
+            a.btn.btn-primary.btn-lg#snfx-discover(href="#snfx-about") Discover
+
+    // About section
+    section#snfx-about
+      .container
+        .row
+          .col-sm-6
+            img.img-responsive.img-circle.center-block(src="/assets/images/me.jpg" alt="Me on the internet")
+          .col-sm-6.text-center
+            span.glyphicon.glyphicon-comment(style="font-size: 60px")
+            h2.section-heading About me, the snow and the fox
+            p.text-light.text-justify My name is
+              strong  Ruben Péricas-Moya
+              | , and I'm a french
+              strong  developer
+              |  and student in Computer Science. I'm currently in my 4th year at INSA Lyon,
+              | completing my master degree in Computer Science engineering.
+            p.text-light.text-justify On the internet my name is
+              strong  Sn0wFox
+              |  - and that's the name I use for most of my personal projects.
+              | The snow has always made me calm and serene,
+              | and I like to think that I'm as curious as a Fox; hence my pseudo.
+            br
+            p.text-light.text-justify Beside coding I love practicing sports, especially those where you have
+              |  to run after something. Joke aside, I actually won
+              strong  the 2016 French Universities National Ultimate Championships
+              | . Don't know about Ultimate ?&nbsp;
+              strong
+                a(href="https://www.youtube.com/watch?v=O3hrx2izSeI", target="_blank") Check this out.
+              |  I'm also a bit musician, since I play guitar.
+          .col-sm-12.text-center
+            p.text-light.complementary-text I like to try everything I hear about,
+              |  and that's most likely because i'm passionate. That's how sometimes I end up testing some new
+              | cool frameworks before anyone else, i.e. when they are still in alpha release (someone said Angular2 ?).
+            p.text-light I'm a huge robotic enthusiast,
+              |  even though my last work is mostly based on web technologies, which I find amazing.
+              | I like to think that every day brings me closer to a full stack developer profile.
+              | You'll find more about my work and my skills in my portfolio and in my resume.
+
+    // Resume section
+    section.content.resume#snfx-resume
+      .container
+        .row
+          .col-lg-8.col-lg-offset-2
+            h1.section-heading Know me better
+            p I believe that browsing my portfolio will teach you a lot about me.
+            a.btn.btn-primary.btn-lg#snfx-explore(href="portfolio") Explore
+            p If you want to view my works and skills in a quicker way, you can download my resume.
+              |  However, a lot of my projects won't appear in it - and it's written in a more formal style.
+              | It's as you want !
+            a.btn.btn-primary.btn-lg#snfx-view-resume(href="/assets/resume_Ruben_PERICAS-MOYA.pdf", target="_blank") View my resume
+
+    include common/footer
+
+    // Custom Javascript
+    script(src="home.js")
+
