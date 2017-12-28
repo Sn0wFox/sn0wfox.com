@@ -52,6 +52,7 @@ const features = [
  * build notifications and sources watchers.
  */
 gulp.task('build', (done) => {
+  gutil.log('[INFO]'.blue + ' Building in ' + (process.env.SNFX_BUILD_MODE ? process.env.SNFX_BUILD_MODE.blue : 'default (dev no watch)'.red) + ' mode...');
   gulp.parallel(buildPug, buildSass, buildAssets)((error) => {
     let next = [buildTs];
     if(DEV) {
