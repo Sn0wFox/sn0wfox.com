@@ -7,7 +7,7 @@ html(lang="en")
     include common/imports
 
     // Custom css
-    link(href="index.css" rel="stylesheet")
+    link(href="index.css" rel='stylesheet')
 
   body
 
@@ -29,16 +29,16 @@ html(lang="en")
             span#snfx-title
           #snfx-intro-content.before-intro
             p I'm Sn0wFox - a developer & computer science student - and this is my website. Here, you'll find information about me and my work.
-            a.btn.btn-primary.btn-lg#snfx-discover(href="#snfx-about") Discover
+            a.btn.btn-primary.btn-lg#snfx-discover(href='#snfx-about') Discover
 
     // About section
     section#snfx-about
       .container
         .row
           .col-sm-6
-            img.img-responsive.img-circle.center-block(src="/assets/images/me.jpg" alt="Me on the internet")
+            img.img-responsive.img-circle.center-block(src='/assets/images/me.jpg' alt='Me on the internet')
           .col-sm-6.text-center
-            span.glyphicon.glyphicon-comment(style="font-size: 60px")
+            span.glyphicon.glyphicon-comment(style='font-size: 60px')
             h2.section-heading About me, the snow and the fox
             p.text-light.text-justify My name is
               strong  Ruben Péricas-Moya
@@ -57,7 +57,7 @@ html(lang="en")
               strong  the 2016 French Universities National Ultimate Championships
               | . Don't know about Ultimate ?&nbsp;
               strong
-                a(href="https://www.youtube.com/watch?v=O3hrx2izSeI", target="_blank") Check this out.
+                a(href="https://www.youtube.com/watch?v=O3hrx2izSeI", target='_blank') Check this out.
               |  I'm also a bit musician, since I play guitar.
           .col-sm-12.text-center
             p.text-light.complementary-text I like to try everything I hear about,
@@ -75,14 +75,14 @@ html(lang="en")
           .col-lg-8.col-lg-offset-2
             h1.section-heading Know me better
             p I believe that browsing my portfolio will teach you a lot about me.
-            a.btn.btn-primary.btn-lg#snfx-explore(href="portfolio") Explore
+            a.btn.btn-primary.btn-lg#snfx-explore(href='portfolio') Explore
             p If you want to view my works and skills in a quicker way, you can download my resume.
               |  However, a lot of my projects won't appear in it - and it's written in a more formal style.
               | It's as you want !
-            a.btn.btn-primary.btn-lg#snfx-view-resume(href="/assets/resume_Ruben_PERICAS-MOYA.pdf", target="_blank") View my resume
+            a.btn.btn-primary.btn-lg#snfx-view-resume(href='/assets/resume_Ruben_PERICAS-MOYA.pdf', target='_blank') View my resume
 
     include common/footer
 
     // Custom Javascript
-    script(src="home.js")
+    script(src='home.js')
 
