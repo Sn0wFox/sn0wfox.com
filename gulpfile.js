@@ -78,8 +78,15 @@ gulp.task('build', (done) => {
 /**
  * Cleans the dist folder by removing it.
  */
-gulp.task('clean', () => {
+gulp.task('clean:dist', () => {
   return del(DIST_ROOT);
+});
+
+/**
+ * Cleans the node_modules folder by removing it.
+ */
+gulp.task('clean:modules', () => {
+  return del('node_modules');
 });
 
 /**
