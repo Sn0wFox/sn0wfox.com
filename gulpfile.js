@@ -3,7 +3,7 @@ const gsass     = require('gulp-sass');         // To compile sass & scss files
 const gcsso     = require('gulp-csso');         // To compile optimize css
 const gpug      = require('gulp-pug');          // To compile pug files
 const gwebpack  = require('webpack-stream');    // To use webpack with gulp
-const gutil     = require('gulp-util');         // To log anything gulp style
+const glog      = require('fancy-log');         // To log anything gulp style
 const gmaps     = require('gulp-sourcemaps');   // To generate Sass source maps
 const grev      = require('gulp-rev');          // To mark files for cache busting
 const grevrep   = require('gulp-rev-replace');  // To automatize cache busted imports
@@ -41,7 +41,6 @@ const features = [
   '404'
 ];
 
-
 /****************************
  * PUBLIC TASKS
  ****************************/
@@ -52,6 +51,7 @@ const features = [
  * build notifications and sources watchers.
  */
 gulp.task('build', (done) => {
+  glog('[INFO]'.blue + ' Building in ' + (process.env.SNFX_BUILD_MODE ? process.env.SNFX_BUILD_MODE.blue : 'default (dev no watch)'.red) + ' mode...');
   gulp.parallel(buildPug, buildSass, buildAssets)((error) => {
     let next = [buildTs];
     if(DEV) {
@@ -68,7 +68,7 @@ gulp.task('build', (done) => {
     }
 
     if(error) {
-      gutil.log('[ERROR]'.red, error);
+      glog('[ERROR]'.red, error);
     }
 
     gulp.series(next)(done);
@@ -78,8 +78,15 @@ gulp.task('build', (done) => {
 /**
  * Cleans the dist folder by removing it.
  */
-gulp.task('clean', () => {
+gulp.task('clean:dist', () => {
   return del(DIST_ROOT);
+});
+
+/**
+ * Cleans the node_modules folder by removing it.
+ */
+gulp.task('clean:modules', () => {
+  return del('node_modules');
 });
 
 /**
@@ -119,7 +126,7 @@ function buildPug() {
     .pipe(gpug())
     .on('error', function(err) {
       error = err;
-      gutil.log('[ERROR]'.red, error.message);
+      glog('[ERROR]'.red, error.message);
       this.emit('end');
     })
     .on('end', () => notify('Pug', error))
@@ -146,7 +153,7 @@ function buildSass() {
   stream
     .on('error', function(err) {
       error = err;
-      gutil.log('[ERROR]'.red, error.message);
+      glog('[ERROR]'.red, error.message);
       this.emit('end');
     })
     .on('end', () => notify('Sass', error))
@@ -155,9 +162,7 @@ function buildSass() {
 
   if(PROD) {
     stream
-      .pipe(grev.manifest({
-        path: 'manifest.css.json'
-      }))
+      .pipe(grev.manifest('manifest.css.json'))
       .pipe(gulp.dest(DIST_ROOT));
   }
 
@@ -176,7 +181,7 @@ function buildAssets() {
     gulp.src(path.join(BOOTSTRAP_ROOT, 'fonts/*'), {base: BOOTSTRAP_ROOT}))
     .on('error', function(err) {
       error = err;
-      gutil.log('[ERROR]'.red, error.message);
+      glog('[ERROR]'.red, error.message);
       this.emit('end');
     })
     .on('end', () => notify('Assets', error))

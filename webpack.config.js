@@ -80,9 +80,6 @@ module.exports = {
       plugins.push(new ManifestPlugin({
         fileName: 'manifest.js.json'
       }));
-
-      // TODO: remove (see prod warning)
-      plugins.push(new webpack.optimize.DedupePlugin());
     }
 
     // Dev only plugins

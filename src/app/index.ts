@@ -19,12 +19,12 @@ $document.ready(() => {
 
   // Init discover button
   $discover.on('click', (event: any) => {
-      // Make sure this.hash has a value before overriding default behavior
-      if (event.target.hash && event.target.hash !== '') {
-        // Prevent default anchor click behavior
-        event.preventDefault();
-        runAnimatedScroll(event.target.hash, 1000);
-      }
+    // Make sure this.hash has a value before overriding default behavior
+    if (event.target.hash && event.target.hash !== '') {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+      runAnimatedScroll(event.target.hash, 1000);
+    }
   });
 
   let intro = new Typed('#snfx-title', {
