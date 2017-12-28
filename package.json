@@ -4,8 +4,9 @@
   "description": "A personnal site and portfolio",
   "main": "dist/index.js",
   "scripts": {
-    "preprod": "gulp clean:dist",
+    "preprod": "npm install && gulp clean:dist",
     "prod": "cross-env SNFX_BUILD_MODE=prod gulp build",
+    "postprod": "gulp clean:modules",
     "dev:server": "node src/dev-server.js",
     "dev": "cross-env SNFX_BUILD_MODE=dev concurrently --kill-others \"gulp build\" \"npm run dev:server\"",
     "debug-prod": "cross-env SNFX_DEBUG_MODE=true npm run prod",
